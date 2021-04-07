@@ -1,11 +1,49 @@
 ---
-title: "Versions"
+title: "PRISMO: Epigenetics"
 author: "Rick Reijnders" 
 date: "`r Sys.Date()`"
+output: html_document
 ---
 
-```{r}
-version
-Sys.info()
-sessionInfo()
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
+
+## Introduction
+This page will illustrate the steps taken in the pre-processing of the epigenetics data. 
+
+
+## Load data
+First the data needs to be loaded. The wd has been set to local storage. The epigenetics data has one file which is does not need many adjustments.
+```{r warning = FALSE}
+rootfolder = "C:/DATA STORAGE/PRISMO/0_Epigenetics/450K/"
+
+load("C:/DATA STORAGE/PRISMO/0_Epigenetics/450K/Results/Prismo epigenetics v6/Norm/data_Results_21ea77.RData")
+```
+
+
+## Match sampleIDs
+The only thing to do is to rename the columns using the correct labels.
+```{r warning = FALSE}
+# as everything is loaded into a single object (data_Results) the only thing to do is matching colnames really..
+colnames(data_Results$betas) = data_Results$pheno$sampleID[match(colnames(data_Results$betas),data_Results$pheno$Basename)]
+
+# @reader, turn the dataframe to contain features on cols, and samples on rows 
+# ... (done in next step to reduce RAM usage)
+```
+
+
+## Save the uniform data
+The data is set in the uniform format and saved.
+```{r warning = FALSE}
+# create combined object of RAW data and annotation 
+data_epigenetics = list(Betas=t(data_Results$betas), Pheno = data_Results$pheno, annotation = data_Results$anno, QC = data_Results$QC)
+
+# Save the object 
+save(data_epigenetics,file = paste0(rootfolder,"Data/Epigenetics_data_object.RData"))
+write.table(file = paste0(rootfolder,"Data/Epigenetics_data_raw.txt"),sep = "\t",x = t(data_Results$betas))
+write.table(file = paste0(rootfolder,"Data/Epigenetics_data_pheno.txt"),sep = "\t",x = data_Results$pheno)
+write.table(file = paste0(rootfolder,"Data/Epigenetics_data_anno.txt"),sep = "\t",x = data_Results$anno)
+write.table(file = paste0(rootfolder,"Data/Epigenetics_data_QC.txt"),sep = "\t",x = data_Results$QC)
+```
+
