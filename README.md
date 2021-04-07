@@ -4,3 +4,8 @@
 ---
 # IntroR
 
+Code to generate html sites:
+
+``
+rmarkdown::render_site()
+``
