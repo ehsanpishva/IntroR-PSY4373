@@ -3,7 +3,7 @@ navbar:
   title: "Introduction to R"
   left:
     - text: "Readme"
-      href: Index.html
+      href: index.html
     - text: "Week 1"
       href: w1.html
     - text: "Week 2"
