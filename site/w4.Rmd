@@ -1,0 +1,11 @@
+---
+title: "Versions"
+author: "Rick Reijnders" 
+date: "`r Sys.Date()`"
+---
+
+```{r}
+version
+Sys.info()
+sessionInfo()
+```

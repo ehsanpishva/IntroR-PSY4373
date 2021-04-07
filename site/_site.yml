@@ -1,0 +1,16 @@
+name: "Introduction to R"
+navbar:
+  title: "Introduction to R"
+  left:
+    - text: "Readme"
+      href: Index.html
+    - text: "Week 1"
+      href: w1.html
+    - text: "Week 2"
+      href: w2.html
+    - text: "Week 3"
+      href: w3.html
+    - text: "Week 4"
+      href: w4.html
+    - text: "Week 5"
+      href: w5.html
