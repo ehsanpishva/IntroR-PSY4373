@@ -1,11 +1,5 @@
 ---
-title: "Versions"
-author: "Rick Reijnders" 
-date: "`r Sys.Date()`"
+title: "Week 2"
 ---
 
-```{r}
-version
-Sys.info()
-sessionInfo()
-```
+This page will be uploaded as you progress throughout the course.
