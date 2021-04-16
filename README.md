@@ -3,6 +3,8 @@
 
 ---
 
+# R for Pathway Enrichment or Drug Repositioning Analysis
+
 R is a free software environment for statistical computing and graphics (https://www.r-project.org/). R software provides basic program functionality, which can be added onto with smaller program modules called packages. R packages for bioinformatics allow biologists to perform a wide range of analyses from basic statistics and plotting to advanced genomic investigation. The content for the first two learning outcomes will be the same for all students. For the assignment students can choose learning on the topic pathway enrichment or drug repositioning, respectively, based on their own interest.
 
 In this workshop, we will cover:
