@@ -1,5 +1,71 @@
 ---
-title: "Week 1 (extra)"
+title: "Week 1 Extra"
+author: "Ehsan Pishva"
+date: "21-4-2021"
+output: html_document
 ---
 
-This page will be uploaded as you progress throughout the course.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<br>
+
+### **Downloads**
+#### Data
+[Click here to download the data (“inflammation-01.csv”)](https://www.dropbox.com/s/0h5rl8k6hx9se3v/inflammation-01.csv?dl=0)
+
+#### R-script
+[Click here to download the R-scripts used in week 1 extra](https://www.dropbox.com/s/9ahsuvxovlca5va/Self-Study_Week1%20Extra.R.r?dl=0)
+
+---
+<br>
+<br>
+
+### Excercise 1
+
+These exercises all use the  data frame you can dowload from the link provided above ("inflammation-01.csv"). First we need to import it as a variable dat. The dataset contain a cytokine measurement for 40 consecutive days of in 60 individuals.  
+
+```{r eval = FALSE}
+setwd("C:/Users/e.pishva/Dropbox/Intro to R/data/")
+#Change the working directory
+
+dat <- read.csv(file = "inflammation-01.csv", header = TRUE, row.names = 1)
+```
+
+
+1. Select from the data frame 'dat':
+
+    - The element on the 4th row and 2nd column.
+    
+    - The element on the 7th row and 5th column.
+    
+    - The 10th row.
+    
+    - The 3rd column.
+
+<br>
+
+2. Let’s calculate some summary statistics for specific individuals (rows) and days (columns).
+
+    - Calculate the mean inflammation score for the first individual.
+    
+    - Calculate the median inflammataion score for the 5th day.
+    
+    - Use min() and max() to calculate the range of values for the 10th individual.
+    
+    - Check you answer with the range() function.
+    
+    - Use quantile() to calculate the [interquartile range] (https://en.wikipedia.org/wiki/Interquartile_range) of the 6th indiviudal.
+
+<br>
+
+3. Using the inflammation data frame inflammation-01.csv: Let’s pretend there was something wrong with the instrument on the first five days for every second patient (#2, 4, 6, etc.), which resulted in the measurements being twice as large as they should be.
+
+    - Write a vector containing each affected patient (hint: ? seq)
+    
+    - Create a new data frame with in which you halve the first five days’ values in only those patients
+    
+    - Print out the corrected data frame to check that your code has fixed the problem
+
+

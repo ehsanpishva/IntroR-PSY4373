@@ -9,9 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Ehsan Pishva" />
 
 
-<title>Week 1 (extra)</title>
+<title>Week 1 Extra</title>
 
 <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -29,6 +30,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -218,6 +222,75 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
 
 </head>
 
@@ -225,6 +298,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-sm-12 col-md-4 col-lg-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-sm-12 col-md-8 col-lg-9">
 
 
 
@@ -286,15 +369,69 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Week 1 (extra)</h1>
+<h1 class="title toc-ignore">Week 1 Extra</h1>
+<h4 class="author">Ehsan Pishva</h4>
+<h4 class="date">21-4-2021</h4>
 
 </div>
 
 
-<p>This page will be uploaded as you progress throughout the course.</p>
+<p><br></p>
+<div id="downloads" class="section level3">
+<h3><strong>Downloads</strong></h3>
+<div id="data" class="section level4">
+<h4>Data</h4>
+<p><a href="https://www.dropbox.com/s/0h5rl8k6hx9se3v/inflammation-01.csv?dl=0">Click here to download the data (“inflammation-01.csv”)</a></p>
+</div>
+<div id="r-script" class="section level4">
+<h4>R-script</h4>
+<p><a href="https://www.dropbox.com/s/9ahsuvxovlca5va/Self-Study_Week1%20Extra.R.r?dl=0">Click here to download the R-scripts used in week 1 extra</a></p>
+<hr />
+<p><br> <br></p>
+</div>
+</div>
+<div id="excercise-1" class="section level3">
+<h3>Excercise 1</h3>
+<p>These exercises all use the data frame you can dowload from the link provided above (“inflammation-01.csv”). First we need to import it as a variable dat. The dataset contain a cytokine measurement for 40 consecutive days of in 60 individuals.</p>
+<pre class="r"><code>setwd(&quot;C:/Users/e.pishva/Dropbox/Intro to R/data/&quot;)
+#Change the working directory
+
+dat &lt;- read.csv(file = &quot;inflammation-01.csv&quot;, header = TRUE, row.names = 1)</code></pre>
+<ol style="list-style-type: decimal">
+<li><p>Select from the data frame ‘dat’:</p>
+<ul>
+<li><p>The element on the 4th row and 2nd column.</p></li>
+<li><p>The element on the 7th row and 5th column.</p></li>
+<li><p>The 10th row.</p></li>
+<li><p>The 3rd column.</p></li>
+</ul></li>
+</ol>
+<p><br></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Let’s calculate some summary statistics for specific individuals (rows) and days (columns).</p>
+<ul>
+<li><p>Calculate the mean inflammation score for the first individual.</p></li>
+<li><p>Calculate the median inflammataion score for the 5th day.</p></li>
+<li><p>Use min() and max() to calculate the range of values for the 10th individual.</p></li>
+<li><p>Check you answer with the range() function.</p></li>
+<li><p>Use quantile() to calculate the [interquartile range] (<a href="https://en.wikipedia.org/wiki/Interquartile_range" class="uri">https://en.wikipedia.org/wiki/Interquartile_range</a>) of the 6th indiviudal.</p></li>
+</ul></li>
+</ol>
+<p><br></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Using the inflammation data frame inflammation-01.csv: Let’s pretend there was something wrong with the instrument on the first five days for every second patient (#2, 4, 6, etc.), which resulted in the measurements being twice as large as they should be.</p>
+<ul>
+<li><p>Write a vector containing each affected patient (hint: ? seq)</p></li>
+<li><p>Create a new data frame with in which you halve the first five days’ values in only those patients</p></li>
+<li><p>Print out the corrected data frame to check that your code has fixed the problem</p></li>
+</ul></li>
+</ol>
+</div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -327,6 +464,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

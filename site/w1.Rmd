@@ -4,18 +4,24 @@ author: "Ehsan Pishva"
 output: html_document
 date: "16-04-2021"
 ---
-<br>
-<br>
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
 ```
-### **Presentation link:**
+
+<br>
+
+### **Downloads**
+#### Presentation
 [Click here to download the presentation](https://www.dropbox.com/s/c10xwgg6cf1jfok/Introduction%20to%20R%20%28PSY4373%29.pdf?dl=0)
 
-### **R-script week 1 link:**
+#### R-script
 [Click here to download the R-scripts used in week 1](https://www.dropbox.com/s/k4ozbyu8if7swdi/Week1.R?dl=0)
 
+---
+<br>
+<br>
 
 ### **Types of data in R**
 
@@ -26,7 +32,7 @@ knitr::opts_chunk$set(echo = TRUE)
     Lists
     Factors
 
-### **Vectors**
+#### **Vectors**
 Commonly used atomic vector types in R:
 
     character: “a”, “swc”
