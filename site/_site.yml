@@ -1,4 +1,11 @@
 name: "Introduction to R | PSY4373"
+output: 
+  html_document:
+#    number_sections: true#Does add number as prefix
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
 navbar:
   title: "Introduction to R | PSY4373"
   left:

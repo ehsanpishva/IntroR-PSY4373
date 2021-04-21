@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
 <br>
 <br>
 
-### Excercise 1
+### Exercise 1
 
 These exercises all use the  data frame you can dowload from the link provided above ("inflammation-01.csv"). First we need to import it as a variable dat. The dataset contain a cytokine measurement for 40 consecutive days of in 60 individuals.  
 
