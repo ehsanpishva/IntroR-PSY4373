@@ -1,5 +1,24 @@
 ---
-title: "Week 2"
+title: "Week 2 - Basic plotting in R"
+author: "Ehsan Pishva"
+output: html_document
+date: "28-04-2021"
 ---
 
-This page will be uploaded as you progress throughout the course.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+<br>
+
+### **Downloads**
+#### R-data file
+[Click here to download the Rdata file](https://www.dropbox.com/s/x4a0m9easgkynsl/data_survey_edit.rdata?dl=0)
+
+#### R-script
+[Click here to download the R-scripts used in week 2](https://www.dropbox.com/s/gq16tis1v8if8xe/Week2.R?dl=0)
+
+---
+<br>
+<br>
