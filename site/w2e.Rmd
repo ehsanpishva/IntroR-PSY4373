@@ -1,5 +1,72 @@
 ---
-title: "Week 2"
+title: "Week 2   - Extra"
+author: "Ehsan Pishva"
+output: html_document
+date: "29-04-2021"
 ---
 
-This page will be uploaded as you progress throughout the course.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+<br>
+
+### **Downloads**
+#### Data dictionary file (describes the variables)
+[Click here to download the data dictionary file](https://www.dropbox.com/s/2xwqrk6dypbx4d0/data_survey.pdf?dl=0)
+
+
+#### R-data file
+[Click here to download the Rdata file ("data_survey_edit.rdata")](https://www.dropbox.com/s/x4a0m9easgkynsl/data_survey_edit.rdata?dl=0)
+
+
+#### Plotting R-script
+[Click here to download the plotting R-script used in week 2 extra](https://www.dropbox.com/s/odm0gwktv82u3ve/Week2%20Extra.R?dl=0)
+
+---
+<br>
+<br>
+
+### Excercise 2
+
+These variables all use the  data frame ("data_survey_edit.rdata"). A data dictionary is provided to describe the variables in the dataset. 
+
+Part A:
+
+  - Create a boxplot showing Positive affect by marital status.
+	
+  - Modify the x-axis text.
+	
+  - Change the range of values in y axis.
+	
+  - Modify the labels for x an y axes.
+	
+  - Give different colors to each marital state.
+	
+  - Add jitter to the boxplot (https://www.r-graph-gallery.com/96-boxplot-with-jitter.html).
+	
+  - Add a legend and insert it at topleft (make sure doesnt overly your plots).
+	
+<br>
+
+Part B:
+
+  - Make a scatterplot showing the association between the Rosenberg Self-Esteem Scale (Total) and Negative affect.
+	
+  - Modify the x-axis text.
+	
+  - Change the range of values in y axis.
+	
+  - Modify the labels for x an y axes.
+	
+  - Color label the points based on sex.
+	
+  - Use different synboles for male and female.
+	
+  - Add a correlation coeffcient line to the scatter plot.
+	
+  - Add a legend and insert it at bottomleft (make sure doesnt overly your plots).
+	
+
+
