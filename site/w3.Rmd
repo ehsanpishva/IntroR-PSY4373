@@ -1,5 +1,29 @@
 ---
-title: "Week 3"
+title: "Week 3 - Statistics for continuous outcomes"
+author: "Ehsan Pishva"
+output: html_document
+date: "05-05-2021"
 ---
 
-This page will be uploaded as you progress throughout the course.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+<br>
+
+### **Downloads**
+#### Data dictionary file (describes the variables)
+[Click here to download the data dictionary file](https://www.dropbox.com/s/2xwqrk6dypbx4d0/data_survey.pdf?dl=0)
+
+
+#### R-data file
+[Click here to download the Rdata file ("data_survey_edit.rdata")](https://www.dropbox.com/s/x4a0m9easgkynsl/data_survey_edit.rdata?dl=0)
+
+
+#### Statistics R-script
+[Click here to download the Statistics R-script used in week 3](https://www.dropbox.com/s/mb9g5h57n7u338g/Week3.R?dl=0)
+
+---
+<br>
+<br>
