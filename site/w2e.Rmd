@@ -54,8 +54,6 @@ Part B:
 
   - Make a scatterplot showing the association between the Rosenberg Self-Esteem Scale (Total) and Negative affect.
 	
-  - Modify the x-axis text.
-	
   - Change the range of values in y axis.
 	
   - Modify the labels for x an y axes.

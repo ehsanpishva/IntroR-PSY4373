@@ -434,17 +434,23 @@ x</code></pre>
 <p>You can create a vector of <strong>consecutive numbers</strong></p>
 <pre class="r"><code>x &lt;- c(20:100)
 x</code></pre>
-<pre><code>##  [1]  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43
-## [25]  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67
-## [49]  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91
-## [73]  92  93  94  95  96  97  98  99 100</code></pre>
+<pre><code>##  [1]  20  21  22  23  24  25  26  27  28  29  30  31  32
+## [14]  33  34  35  36  37  38  39  40  41  42  43  44  45
+## [27]  46  47  48  49  50  51  52  53  54  55  56  57  58
+## [40]  59  60  61  62  63  64  65  66  67  68  69  70  71
+## [53]  72  73  74  75  76  77  78  79  80  81  82  83  84
+## [66]  85  86  87  88  89  90  91  92  93  94  95  96  97
+## [79]  98  99 100</code></pre>
 <p>you don’t even need <strong>c()</strong> here</p>
 <pre class="r"><code>x &lt;- 20:100
 x</code></pre>
-<pre><code>##  [1]  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40  41  42  43
-## [25]  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67
-## [49]  68  69  70  71  72  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91
-## [73]  92  93  94  95  96  97  98  99 100</code></pre>
+<pre><code>##  [1]  20  21  22  23  24  25  26  27  28  29  30  31  32
+## [14]  33  34  35  36  37  38  39  40  41  42  43  44  45
+## [27]  46  47  48  49  50  51  52  53  54  55  56  57  58
+## [40]  59  60  61  62  63  64  65  66  67  68  69  70  71
+## [53]  72  73  74  75  76  77  78  79  80  81  82  83  84
+## [66]  85  86  87  88  89  90  91  92  93  94  95  96  97
+## [79]  98  99 100</code></pre>
 <p>Note: if the vector is too long to fit into a single line, the output is wrapped and the numbers in brackets (e.g., [1]) indicate the position of the value that comes next <br></p>
 <p>if you mix numbers and strings, you get a character vector</p>
 <pre class="r"><code>x &lt;- c(&quot;Bob&quot;, &quot;Sue&quot;, &quot;John&quot;, 2, 5)
@@ -470,13 +476,23 @@ y&lt;-2
 z&lt;-55
 
 ls()</code></pre>
-<pre><code>## [1] &quot;dat&quot;    &quot;gender&quot; &quot;mean&quot;   &quot;w&quot;      &quot;x&quot;      &quot;y&quot;      &quot;z&quot;</code></pre>
+<pre><code>##  [1] &quot;cols&quot;             &quot;dat&quot;             
+##  [3] &quot;i&quot;                &quot;levelProportions&quot;
+##  [5] &quot;myjitter&quot;         &quot;mylevels&quot;        
+##  [7] &quot;symbs&quot;            &quot;thislevel&quot;       
+##  [9] &quot;thisvalues&quot;       &quot;x&quot;               
+## [11] &quot;y&quot;                &quot;z&quot;</code></pre>
 </div>
 <div id="how-to-remove-an-object-or-clear-the-entire-workspace" class="section level4">
 <h4>How to remove an object or clear the entire workspace?</h4>
 <pre class="r"><code>rm(x)
 ls()</code></pre>
-<pre><code>## [1] &quot;dat&quot;    &quot;gender&quot; &quot;mean&quot;   &quot;w&quot;      &quot;y&quot;      &quot;z&quot;</code></pre>
+<pre><code>##  [1] &quot;cols&quot;             &quot;dat&quot;             
+##  [3] &quot;i&quot;                &quot;levelProportions&quot;
+##  [5] &quot;myjitter&quot;         &quot;mylevels&quot;        
+##  [7] &quot;symbs&quot;            &quot;thislevel&quot;       
+##  [9] &quot;thisvalues&quot;       &quot;y&quot;               
+## [11] &quot;z&quot;</code></pre>
 <pre class="r"><code>rm(list=ls())
 ls()</code></pre>
 <pre><code>## character(0)</code></pre>
