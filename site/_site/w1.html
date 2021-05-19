@@ -480,13 +480,15 @@ y&lt;-2
 z&lt;-55
 
 ls()</code></pre>
-<pre><code>## [1] &quot;x&quot; &quot;y&quot; &quot;z&quot;</code></pre>
+<pre><code>## [1] &quot;dat&quot;    &quot;gender&quot; &quot;mean&quot;   &quot;w&quot;     
+## [5] &quot;x&quot;      &quot;y&quot;      &quot;z&quot;</code></pre>
 </div>
 <div id="how-to-remove-an-object-or-clear-the-entire-workspace" class="section level4">
 <h4>How to remove an object or clear the entire workspace?</h4>
 <pre class="r"><code>rm(x)
 ls()</code></pre>
-<pre><code>## [1] &quot;y&quot; &quot;z&quot;</code></pre>
+<pre><code>## [1] &quot;dat&quot;    &quot;gender&quot; &quot;mean&quot;   &quot;w&quot;     
+## [5] &quot;y&quot;      &quot;z&quot;</code></pre>
 <pre class="r"><code>rm(list=ls())
 ls()</code></pre>
 <pre><code>## character(0)</code></pre>
@@ -564,7 +566,7 @@ x</code></pre>
 <pre class="r"><code>mean</code></pre>
 <pre><code>## function (x, ...) 
 ## UseMethod(&quot;mean&quot;)
-## &lt;bytecode: 0x000001f36d18bc00&gt;
+## &lt;bytecode: 0x0000024e39c13538&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 <p>better avoid naming objects after commands -&gt; confusing! <br></p>
 <p><br></p>
