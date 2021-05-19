@@ -24,6 +24,10 @@ knitr::opts_chunk$set(echo = TRUE)
 #### R-script
 [Click here to download the R-script used in week 4](https://www.dropbox.com/s/3dyk1ai5ddni3g1/Week4.R?dl=0)
 
+#### miRNA data
+[Click here to download the miRNA data](https://www.dropbox.com/s/n80v2kfvvfo054l/miRNAdata.Rdata?dl=0)
+
+
 ---
 <br>
 <br>
