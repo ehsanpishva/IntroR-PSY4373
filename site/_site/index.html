@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Ehsan Pishva" />
 
 
-<title>Week 4 - Assignment</title>
+<title>R for Pathway Enrichment or Drug Repositioning Analysis</title>
 
 <script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -369,70 +368,30 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Week 4 - Assignment</h1>
-<h4 class="author">Ehsan Pishva</h4>
-<h4 class="date">21-5-2021</h4>
+<h1 class="title toc-ignore">R for Pathway Enrichment or Drug Repositioning Analysis</h1>
 
 </div>
 
 
-<p><br></p>
-<div id="downloads" class="section level3">
-<h3><strong>Downloads</strong></h3>
-<div id="mirna-data" class="section level4">
-<h4>miRNA data</h4>
-<p><a href="https://www.dropbox.com/s/n80v2kfvvfo054l/miRNAdata.Rdata?dl=0">Click here to download the miRNA data</a></p>
-<hr />
-<p><br> <br></p>
-</div>
-</div>
-<div id="excercise-4" class="section level2">
-<h2>Excercise 4</h2>
-<ol style="list-style-type: decimal">
-<li>The codes for differential miRNA expression analysis of Alzheimers disease post-mortem brains are pasted below.</li>
-</ol>
-<pre class="r"><code>#setwd(&quot;&quot;)
-
-load(&quot;miRNAdata.Rdata&quot;)
-
-res&lt;-matrix(data=NA, nrow=490, ncol= 4)
-
-for (i in 2:491){
-  fit&lt;-lm(dat[,i]~dat$Braak)
-  res[i-1,]&lt;-summary(fit)$coefficient[2,]
-  
-}
-
-colnames(res)&lt;-c(&quot;Estimate&quot;,&quot;SE&quot;,&quot;t&quot;,&quot;P&quot;)
-rownames(res)&lt;-colnames(dat)[2:491]
-res.ordered&lt;-res[order(res[,4]),]</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Install package multiMiR: <a href="https://www.bioconductor.org/packages/release/bioc/vignettes/multiMiR/inst/doc/multiMiR.html" class="uri">https://www.bioconductor.org/packages/release/bioc/vignettes/multiMiR/inst/doc/multiMiR.html</a></li>
-</ol>
-<pre class="r"><code>if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
-    install.packages(&quot;BiocManager&quot;)
-
-BiocManager::install(&quot;multiMiR&quot;)</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Use function “get_multimir” in the package and extract the validated mRNA targets for the top(most significant) two deferentially expressed miRNAs in association with AD pathology.</p></li>
-<li><p>Generate a vector from the column called “target_entrez” in the table of results return by get_multimir function.</p></li>
-<li><p>Install package Clusterprofiler and org.Hs.eg.db</p></li>
-</ol>
-<pre class="r"><code>if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
-    install.packages(&quot;BiocManager&quot;)
-
-BiocManager::install(&quot;clusterProfiler&quot;)
-
-
-if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
-    install.packages(&quot;BiocManager&quot;)
-
-BiocManager::install(&quot;org.Hs.eg.db&quot;)</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li><p>Use function enrichKEGG and use the vector you generated from the target_entrez as an input.</p></li>
-<li><p>Write the table of KEGG pathway analysis and upload that together with you script.</p></li>
-</ol>
-</div>
+<p>R is a free software environment for statistical computing and graphics (<a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>). R software provides basic program functionality, which can be added onto with smaller program modules called packages. R packages for bioinformatics allow biologists to perform a wide range of analyses from basic statistics and plotting to advanced genomic investigation. The content for the first two learning outcomes will be the same for all students. For the assignment students can choose learning on the topic pathway enrichment or drug repositioning, respectively, based on their own interest.</p>
+<p>In this workshop, we will cover:</p>
+<ul>
+<li><p>a bit of history and the development of R</p></li>
+<li><p>how to use and interact with R</p></li>
+<li><p>basic data structures</p></li>
+<li><p>data import and export</p></li>
+<li><p>data inspection and manipulation</p></li>
+<li><p>methods for graphing data</p></li>
+<li><p>t-tests and analysis of (co)variance</p></li>
+<li><p>correlations and linear regression</p></li>
+<li><p>categorical data analysis and logistic regression</p></li>
+<li><p>add-on packages (how to find, install, and work with them)</p></li>
+<li><p>how/where to obtain help when you get stuck</p></li>
+<li><p>basic programming structures (e.g., loops, if-else statements)</p></li>
+<li><p>writing documents with R Markdown</p></li>
+<li><p>Applications of R in of pathway analysis (FN) and Drug repositioning (DN)</p></li>
+</ul>
+<p>ACKNOWLEDGEMENT The content and examples of this workshop are largely adapted from an online course regularly given by Dr. Wolfgang Viechtbauer with his permission.</p>
 
 
 

@@ -12,7 +12,7 @@
 <meta name="author" content="Ehsan Pishva" />
 
 
-<title>Week 4 - Assignment</title>
+<title>Week 1 Extra</title>
 
 <script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -369,9 +369,9 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Week 4 - Assignment</h1>
+<h1 class="title toc-ignore">Week 1 Extra</h1>
 <h4 class="author">Ehsan Pishva</h4>
-<h4 class="date">21-5-2021</h4>
+<h4 class="date">21-4-2021</h4>
 
 </div>
 
@@ -379,59 +379,60 @@ div.tocify {
 <p><br></p>
 <div id="downloads" class="section level3">
 <h3><strong>Downloads</strong></h3>
-<div id="mirna-data" class="section level4">
-<h4>miRNA data</h4>
-<p><a href="https://www.dropbox.com/s/n80v2kfvvfo054l/miRNAdata.Rdata?dl=0">Click here to download the miRNA data</a></p>
+<div id="data" class="section level4">
+<h4>Data</h4>
+<p><a href="https://www.dropbox.com/s/0h5rl8k6hx9se3v/inflammation-01.csv?dl=0">Click here to download the data (“inflammation-01.csv”)</a></p>
+</div>
+<div id="r-script" class="section level4">
+<h4>R-script</h4>
+<p><a href="https://www.dropbox.com/s/9ahsuvxovlca5va/Self-Study_Week1%20Extra.R.r?dl=0">Click here to download the R-scripts used in week 1 extra</a></p>
 <hr />
 <p><br> <br></p>
 </div>
 </div>
-<div id="excercise-4" class="section level2">
-<h2>Excercise 4</h2>
+<div id="exercise-1" class="section level3">
+<h3>Exercise 1</h3>
+<p>These exercises all use the data frame you can dowload from the link provided above (“inflammation-01.csv”). First we need to import it as a variable dat. The dataset contain a cytokine measurement for 40 consecutive days of in 60 individuals.</p>
+<pre class="r"><code>setwd(&quot;C:/Users/e.pishva/Dropbox/Intro to R/data/&quot;)
+#Change the working directory
+
+dat &lt;- read.csv(file = &quot;inflammation-01.csv&quot;, header = TRUE, row.names = 1)</code></pre>
 <ol style="list-style-type: decimal">
-<li>The codes for differential miRNA expression analysis of Alzheimers disease post-mortem brains are pasted below.</li>
+<li><p>Select from the data frame ‘dat’:</p>
+<ul>
+<li><p>The element on the 4th row and 2nd column.</p></li>
+<li><p>The element on the 7th row and 5th column.</p></li>
+<li><p>The 10th row.</p></li>
+<li><p>The 3rd column.</p></li>
+</ul></li>
 </ol>
-<pre class="r"><code>#setwd(&quot;&quot;)
-
-load(&quot;miRNAdata.Rdata&quot;)
-
-res&lt;-matrix(data=NA, nrow=490, ncol= 4)
-
-for (i in 2:491){
-  fit&lt;-lm(dat[,i]~dat$Braak)
-  res[i-1,]&lt;-summary(fit)$coefficient[2,]
-  
-}
-
-colnames(res)&lt;-c(&quot;Estimate&quot;,&quot;SE&quot;,&quot;t&quot;,&quot;P&quot;)
-rownames(res)&lt;-colnames(dat)[2:491]
-res.ordered&lt;-res[order(res[,4]),]</code></pre>
+<p><br></p>
 <ol start="2" style="list-style-type: decimal">
-<li>Install package multiMiR: <a href="https://www.bioconductor.org/packages/release/bioc/vignettes/multiMiR/inst/doc/multiMiR.html" class="uri">https://www.bioconductor.org/packages/release/bioc/vignettes/multiMiR/inst/doc/multiMiR.html</a></li>
+<li><p>Let’s calculate some summary statistics for specific individuals (rows) and days (columns).</p>
+<ul>
+<li><p>Calculate the mean inflammation score for the first individual.</p></li>
+<li><p>Calculate the median inflammataion score for the 5th day.</p></li>
+<li><p>Use min() and max() to calculate the range of values for the 10th individual.</p></li>
+<li><p>Check you answer with the range() function.</p></li>
+<li><p>Use quantile() to calculate the [interquartile range] (<a href="https://en.wikipedia.org/wiki/Interquartile_range" class="uri">https://en.wikipedia.org/wiki/Interquartile_range</a>) of the 6th indiviudal.</p></li>
+</ul></li>
 </ol>
-<pre class="r"><code>if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
-    install.packages(&quot;BiocManager&quot;)
-
-BiocManager::install(&quot;multiMiR&quot;)</code></pre>
+<p><br></p>
 <ol start="3" style="list-style-type: decimal">
-<li><p>Use function “get_multimir” in the package and extract the validated mRNA targets for the top(most significant) two deferentially expressed miRNAs in association with AD pathology.</p></li>
-<li><p>Generate a vector from the column called “target_entrez” in the table of results return by get_multimir function.</p></li>
-<li><p>Install package Clusterprofiler and org.Hs.eg.db</p></li>
+<li><p>Using the inflammation data frame inflammation-01.csv: Let’s pretend there was something wrong with the instrument on the first five days for every second patient (#2, 4, 6, etc.), which resulted in the measurements being twice as large as they should be.</p>
+<ul>
+<li><p>Write a vector containing each affected patient (hint: ? seq)</p></li>
+<li><p>Create a new data frame with in which you halve the first five days’ values in only those patients</p></li>
+<li><p>Print out the corrected data frame to check that your code has fixed the problem</p></li>
+</ul></li>
 </ol>
-<pre class="r"><code>if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
-    install.packages(&quot;BiocManager&quot;)
-
-BiocManager::install(&quot;clusterProfiler&quot;)
-
-
-if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
-    install.packages(&quot;BiocManager&quot;)
-
-BiocManager::install(&quot;org.Hs.eg.db&quot;)</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li><p>Use function enrichKEGG and use the vector you generated from the target_entrez as an input.</p></li>
-<li><p>Write the table of KEGG pathway analysis and upload that together with you script.</p></li>
-</ol>
+<p><br> <br></p>
+</div>
+<div id="solution" class="section level3">
+<h3><strong>Solution</strong></h3>
+<p>Go to the link below if you want to compare your script to the solution.</p>
+<p><a href="https://github.com/ehsanpishva/IntroR-PSY4373/blob/main/Scripts/IntroR_solution_exercise_1.R">Solution script GitHub</a></p>
+<p><a href="https://raw.githubusercontent.com/ehsanpishva/IntroR-PSY4373/main/Scripts/IntroR_solution_exercise_1.R">Solution script RAW</a></p>
 </div>
 
 

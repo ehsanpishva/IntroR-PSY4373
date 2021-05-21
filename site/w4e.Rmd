@@ -1,5 +1,85 @@
 ---
-title: "Week 4"
+title: "Week 4 - Assignment"
+author: "Ehsan Pishva"
+output: html_document
+date: "21-5-2021"
 ---
 
-This page will be uploaded as you progress throughout the course.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+<br>
+
+### **Downloads**
+#### miRNA data
+[Click here to download the miRNA data](https://www.dropbox.com/s/n80v2kfvvfo054l/miRNAdata.Rdata?dl=0)
+
+---
+<br>
+<br>
+
+## Excercise 4
+
+1. The codes for differential miRNA expression analysis of Alzheimers disease post-mortem brains are pasted below.  
+
+```{r c1, eval = FALSE}
+#setwd("")
+
+load("miRNAdata.Rdata")
+
+res<-matrix(data=NA, nrow=490, ncol= 4)
+
+for (i in 2:491){
+  fit<-lm(dat[,i]~dat$Braak)
+  res[i-1,]<-summary(fit)$coefficient[2,]
+  
+}
+
+colnames(res)<-c("Estimate","SE","t","P")
+rownames(res)<-colnames(dat)[2:491]
+res.ordered<-res[order(res[,4]),]
+
+```
+
+
+2. Install package multiMiR: 
+https://www.bioconductor.org/packages/release/bioc/vignettes/multiMiR/inst/doc/multiMiR.html
+
+```{r c2, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("multiMiR")
+```
+
+3. Use function "get_multimir" in the package and extract the validated mRNA targets for the top(most significant) two deferentially expressed miRNAs in association with AD pathology. 
+
+
+4. Generate a vector from the column called "target_entrez" in the table of results return by get_multimir function.
+
+5. Install package Clusterprofiler and org.Hs.eg.db
+
+```{r c3, eval = FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("clusterProfiler")
+
+
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("org.Hs.eg.db")
+```
+
+6. Use function enrichKEGG and use the vector you generated from the target_entrez as an input.
+
+7. Write the table of KEGG pathway analysis and upload that together with you script. 
+
+
+
+
+
+

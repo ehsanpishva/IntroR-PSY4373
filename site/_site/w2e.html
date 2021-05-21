@@ -12,7 +12,7 @@
 <meta name="author" content="Ehsan Pishva" />
 
 
-<title>Week 4 - Assignment</title>
+<title>Week 2 - Extra</title>
 
 <script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -369,9 +369,9 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Week 4 - Assignment</h1>
+<h1 class="title toc-ignore">Week 2 - Extra</h1>
 <h4 class="author">Ehsan Pishva</h4>
-<h4 class="date">21-5-2021</h4>
+<h4 class="date">29-04-2021</h4>
 
 </div>
 
@@ -379,59 +379,52 @@ div.tocify {
 <p><br></p>
 <div id="downloads" class="section level3">
 <h3><strong>Downloads</strong></h3>
-<div id="mirna-data" class="section level4">
-<h4>miRNA data</h4>
-<p><a href="https://www.dropbox.com/s/n80v2kfvvfo054l/miRNAdata.Rdata?dl=0">Click here to download the miRNA data</a></p>
+<div id="data-dictionary-file-describes-the-variables" class="section level4">
+<h4>Data dictionary file (describes the variables)</h4>
+<p><a href="https://www.dropbox.com/s/2xwqrk6dypbx4d0/data_survey.pdf?dl=0">Click here to download the data dictionary file</a></p>
+</div>
+<div id="r-data-file" class="section level4">
+<h4>R-data file</h4>
+<p><a href="https://www.dropbox.com/s/x4a0m9easgkynsl/data_survey_edit.rdata?dl=0">Click here to download the Rdata file (“data_survey_edit.rdata”)</a></p>
+</div>
+<div id="plotting-r-script" class="section level4">
+<h4>Plotting R-script</h4>
+<p><a href="https://www.dropbox.com/s/odm0gwktv82u3ve/Week2%20Extra.R?dl=0">Click here to download the plotting R-script used in week 2 extra</a></p>
 <hr />
 <p><br> <br></p>
 </div>
 </div>
-<div id="excercise-4" class="section level2">
-<h2>Excercise 4</h2>
-<ol style="list-style-type: decimal">
-<li>The codes for differential miRNA expression analysis of Alzheimers disease post-mortem brains are pasted below.</li>
-</ol>
-<pre class="r"><code>#setwd(&quot;&quot;)
-
-load(&quot;miRNAdata.Rdata&quot;)
-
-res&lt;-matrix(data=NA, nrow=490, ncol= 4)
-
-for (i in 2:491){
-  fit&lt;-lm(dat[,i]~dat$Braak)
-  res[i-1,]&lt;-summary(fit)$coefficient[2,]
-  
-}
-
-colnames(res)&lt;-c(&quot;Estimate&quot;,&quot;SE&quot;,&quot;t&quot;,&quot;P&quot;)
-rownames(res)&lt;-colnames(dat)[2:491]
-res.ordered&lt;-res[order(res[,4]),]</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Install package multiMiR: <a href="https://www.bioconductor.org/packages/release/bioc/vignettes/multiMiR/inst/doc/multiMiR.html" class="uri">https://www.bioconductor.org/packages/release/bioc/vignettes/multiMiR/inst/doc/multiMiR.html</a></li>
-</ol>
-<pre class="r"><code>if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
-    install.packages(&quot;BiocManager&quot;)
-
-BiocManager::install(&quot;multiMiR&quot;)</code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Use function “get_multimir” in the package and extract the validated mRNA targets for the top(most significant) two deferentially expressed miRNAs in association with AD pathology.</p></li>
-<li><p>Generate a vector from the column called “target_entrez” in the table of results return by get_multimir function.</p></li>
-<li><p>Install package Clusterprofiler and org.Hs.eg.db</p></li>
-</ol>
-<pre class="r"><code>if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
-    install.packages(&quot;BiocManager&quot;)
-
-BiocManager::install(&quot;clusterProfiler&quot;)
-
-
-if (!requireNamespace(&quot;BiocManager&quot;, quietly = TRUE))
-    install.packages(&quot;BiocManager&quot;)
-
-BiocManager::install(&quot;org.Hs.eg.db&quot;)</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li><p>Use function enrichKEGG and use the vector you generated from the target_entrez as an input.</p></li>
-<li><p>Write the table of KEGG pathway analysis and upload that together with you script.</p></li>
-</ol>
+<div id="excercise-2" class="section level3">
+<h3>Excercise 2</h3>
+<p>These variables all use the data frame (“data_survey_edit.rdata”). A data dictionary is provided to describe the variables in the dataset.</p>
+<p>Part A:</p>
+<ul>
+<li><p>Create a boxplot showing Positive affect by marital status.</p></li>
+<li><p>Modify the x-axis text.</p></li>
+<li><p>Change the range of values in y axis.</p></li>
+<li><p>Modify the labels for x an y axes.</p></li>
+<li><p>Give different colors to each marital state.</p></li>
+<li><p>Add jitter to the boxplot (<a href="https://www.r-graph-gallery.com/96-boxplot-with-jitter.html" class="uri">https://www.r-graph-gallery.com/96-boxplot-with-jitter.html</a>).</p></li>
+<li><p>Add a legend and insert it at topleft (make sure doesnt overly your plots).</p></li>
+</ul>
+<p><br></p>
+<p>Part B:</p>
+<ul>
+<li><p>Make a scatterplot showing the association between the Rosenberg Self-Esteem Scale (Total) and Negative affect.</p></li>
+<li><p>Change the range of values in y axis.</p></li>
+<li><p>Modify the labels for x an y axes.</p></li>
+<li><p>Color label the points based on sex.</p></li>
+<li><p>Use different synboles for male and female.</p></li>
+<li><p>Add a correlation coeffcient line to the scatter plot.</p></li>
+<li><p>Add a legend and insert it at bottomleft (make sure doesnt overly your plots).</p></li>
+</ul>
+<p><br> <br></p>
+</div>
+<div id="solution" class="section level3">
+<h3><strong>Solution</strong></h3>
+<p>Go to the link below if you want to compare your script to the solution.</p>
+<p><a href="https://github.com/ehsanpishva/IntroR-PSY4373/blob/main/Scripts/IntroR_solution_exercise_2.R">Solution script GitHub</a></p>
+<p><a href="https://raw.githubusercontent.com/ehsanpishva/IntroR-PSY4373/main/Scripts/IntroR_solution_exercise_2.R">Solution script RAW</a></p>
 </div>
 
 
