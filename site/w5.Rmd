@@ -1,5 +1,27 @@
 ---
-title: "Week 5"
+title: "Week 5 - R Markdown"
+author: "Ehsan Pishva"
+output: html_document
+date: "26-05-2021"
 ---
 
-This page will be uploaded as you progress throughout the course.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+<br>
+
+### **Downloads**
+#### R-markdown (RMD) file
+[Click here to download the RMD file ("example_rmarkdown.rmd")](https://www.dropbox.com/s/owhha3m02k6ijm6/example_rmarkdown.rmd?dl=0)
+
+
+#### References file
+[Click here to download references file ("references.bib")](https://www.dropbox.com/s/e1lb4cebqcz65ew/references.bib?dl=0)
+
+FYI: if you want to generate these reference files yourself, take a look at this [link](https://www.bioinformatics.org/texmed/). It uses NCBI identifiers and converts them to bibtex.
+
+---
+<br>
+<br>
