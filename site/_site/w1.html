@@ -434,21 +434,27 @@ x</code></pre>
 <p>You can create a vector of <strong>consecutive numbers</strong></p>
 <pre class="r"><code>x &lt;- c(20:100)
 x</code></pre>
-<pre><code>##  [1]  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
-## [16]  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49
-## [31]  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64
-## [46]  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79
-## [61]  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94
-## [76]  95  96  97  98  99 100</code></pre>
+<pre><code>##  [1]  20  21  22  23  24  25  26  27  28  29
+## [11]  30  31  32  33  34  35  36  37  38  39
+## [21]  40  41  42  43  44  45  46  47  48  49
+## [31]  50  51  52  53  54  55  56  57  58  59
+## [41]  60  61  62  63  64  65  66  67  68  69
+## [51]  70  71  72  73  74  75  76  77  78  79
+## [61]  80  81  82  83  84  85  86  87  88  89
+## [71]  90  91  92  93  94  95  96  97  98  99
+## [81] 100</code></pre>
 <p>you don’t even need <strong>c()</strong> here</p>
 <pre class="r"><code>x &lt;- 20:100
 x</code></pre>
-<pre><code>##  [1]  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34
-## [16]  35  36  37  38  39  40  41  42  43  44  45  46  47  48  49
-## [31]  50  51  52  53  54  55  56  57  58  59  60  61  62  63  64
-## [46]  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79
-## [61]  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94
-## [76]  95  96  97  98  99 100</code></pre>
+<pre><code>##  [1]  20  21  22  23  24  25  26  27  28  29
+## [11]  30  31  32  33  34  35  36  37  38  39
+## [21]  40  41  42  43  44  45  46  47  48  49
+## [31]  50  51  52  53  54  55  56  57  58  59
+## [41]  60  61  62  63  64  65  66  67  68  69
+## [51]  70  71  72  73  74  75  76  77  78  79
+## [61]  80  81  82  83  84  85  86  87  88  89
+## [71]  90  91  92  93  94  95  96  97  98  99
+## [81] 100</code></pre>
 <p>Note: if the vector is too long to fit into a single line, the output is wrapped and the numbers in brackets (e.g., [1]) indicate the position of the value that comes next <br></p>
 <p>if you mix numbers and strings, you get a character vector</p>
 <pre class="r"><code>x &lt;- c(&quot;Bob&quot;, &quot;Sue&quot;, &quot;John&quot;, 2, 5)
@@ -558,7 +564,7 @@ x</code></pre>
 <pre class="r"><code>mean</code></pre>
 <pre><code>## function (x, ...) 
 ## UseMethod(&quot;mean&quot;)
-## &lt;bytecode: 0x0000020f56467a70&gt;
+## &lt;bytecode: 0x000002b0eb255ef8&gt;
 ## &lt;environment: namespace:base&gt;</code></pre>
 <p>better avoid naming objects after commands -&gt; confusing! <br></p>
 <p><br></p>
@@ -649,7 +655,8 @@ x</code></pre>
 <pre class="r"><code>x^2</code></pre>
 <pre><code>## [1]  4 16  9 25 49</code></pre>
 <pre class="r"><code>log(x)</code></pre>
-<pre><code>## [1] 0.6931472 1.3862944 1.0986123 1.6094379 1.9459101</code></pre>
+<pre><code>## [1] 0.6931472 1.3862944 1.0986123 1.6094379
+## [5] 1.9459101</code></pre>
 <p>an example of a non-vectorized operation</p>
 <pre class="r"><code>mean(x)</code></pre>
 <pre><code>## [1] 4.2</code></pre>
@@ -697,7 +704,8 @@ dat</code></pre>
 <pre class="r"><code>View(dat)</code></pre>
 <p>R is not Excel …Clean up the workspace a bit (keep things tidy!)</p>
 <pre class="r"><code>ls()</code></pre>
-<pre><code>## [1] &quot;age&quot;  &quot;dat&quot;  &quot;grp&quot;  &quot;id&quot;   &quot;mean&quot; &quot;sex&quot;  &quot;x&quot;</code></pre>
+<pre><code>## [1] &quot;age&quot;  &quot;dat&quot;  &quot;grp&quot;  &quot;id&quot;   &quot;mean&quot;
+## [6] &quot;sex&quot;  &quot;x&quot;</code></pre>
 <pre class="r"><code>rm(id, age, grp, sex)
 
 ls()</code></pre>
@@ -980,7 +988,8 @@ dat</code></pre>
 ## 1       1  24   Male   T 5
 ## 3       3  24 Female   T 8</code></pre>
 <pre class="r"><code>names(dat)</code></pre>
-<pre><code>## [1] &quot;subject&quot; &quot;age&quot;     &quot;sex&quot;     &quot;grp&quot;     &quot;y&quot;</code></pre>
+<pre><code>## [1] &quot;subject&quot; &quot;age&quot;     &quot;sex&quot;     &quot;grp&quot;    
+## [5] &quot;y&quot;</code></pre>
 <pre class="r"><code>names(dat) == &quot;age&quot;</code></pre>
 <pre><code>## [1] FALSE  TRUE FALSE FALSE FALSE</code></pre>
 <pre class="r"><code>names(dat)[names(dat) == &quot;age&quot;] &lt;- &quot;years&quot;
@@ -1019,10 +1028,14 @@ dat</code></pre>
 <pre class="r"><code>dat$ysum  &lt;- dat$y1 + dat$y2
 dat$ymean &lt;- (dat$y1 + dat$y2) / 2
 dat</code></pre>
-<pre><code>##   subject years    sex grp days y1 y2 ysum ymean
-## 2       2    21   Male   C 7665  2  5    7   3.5
-## 1       1    24   Male   T 8760  4  5    9   4.5
-## 3       3    24 Female   T 8760  3  1    4   2.0</code></pre>
+<pre><code>##   subject years    sex grp days y1 y2 ysum
+## 2       2    21   Male   C 7665  2  5    7
+## 1       1    24   Male   T 8760  4  5    9
+## 3       3    24 Female   T 8760  3  1    4
+##   ymean
+## 2   3.5
+## 1   4.5
+## 3   2.0</code></pre>
 <p>There are special functions for this</p>
 <pre class="r"><code>dat$ysum  &lt;- NULL
 dat$ymean &lt;- NULL
@@ -1039,44 +1052,68 @@ dat</code></pre>
 <pre class="r"><code>dat$ysum  &lt;- rowSums(dat[c(&quot;y1&quot;,&quot;y2&quot;)])
 dat$ymean &lt;- rowMeans(dat[c(&quot;y1&quot;,&quot;y2&quot;)])
 dat</code></pre>
-<pre><code>##   subject years    sex grp days y1 y2 ysum ymean
-## 2       2    21   Male   C 7665  2  5    7   3.5
-## 1       1    24   Male   T 8760  4  5    9   4.5
-## 3       3    24 Female   T 8760  3  1    4   2.0</code></pre>
+<pre><code>##   subject years    sex grp days y1 y2 ysum
+## 2       2    21   Male   C 7665  2  5    7
+## 1       1    24   Male   T 8760  4  5    9
+## 3       3    24 Female   T 8760  3  1    4
+##   ymean
+## 2   3.5
+## 1   4.5
+## 3   2.0</code></pre>
 <p>what if there are missing values?</p>
 <pre class="r"><code>dat$y1[2] &lt;- NA
 dat</code></pre>
-<pre><code>##   subject years    sex grp days y1 y2 ysum ymean
-## 2       2    21   Male   C 7665  2  5    7   3.5
-## 1       1    24   Male   T 8760 NA  5    9   4.5
-## 3       3    24 Female   T 8760  3  1    4   2.0</code></pre>
+<pre><code>##   subject years    sex grp days y1 y2 ysum
+## 2       2    21   Male   C 7665  2  5    7
+## 1       1    24   Male   T 8760 NA  5    9
+## 3       3    24 Female   T 8760  3  1    4
+##   ymean
+## 2   3.5
+## 1   4.5
+## 3   2.0</code></pre>
 <p>then the resulting mean/sum will also be NA</p>
 <pre class="r"><code>dat$ymean &lt;- rowMeans(dat[c(&quot;y1&quot;,&quot;y2&quot;)])
 dat</code></pre>
-<pre><code>##   subject years    sex grp days y1 y2 ysum ymean
-## 2       2    21   Male   C 7665  2  5    7   3.5
-## 1       1    24   Male   T 8760 NA  5    9    NA
-## 3       3    24 Female   T 8760  3  1    4   2.0</code></pre>
+<pre><code>##   subject years    sex grp days y1 y2 ysum
+## 2       2    21   Male   C 7665  2  5    7
+## 1       1    24   Male   T 8760 NA  5    9
+## 3       3    24 Female   T 8760  3  1    4
+##   ymean
+## 2   3.5
+## 1    NA
+## 3   2.0</code></pre>
 <p>can avoid this with the ‘na.rm’ argument (set it to TRUE); then the mean or sum is taken over the non-missing values within each row</p>
 <pre class="r"><code>dat$ymean &lt;- rowMeans(dat[c(&quot;y1&quot;,&quot;y2&quot;)], na.rm=TRUE)
 dat</code></pre>
-<pre><code>##   subject years    sex grp days y1 y2 ysum ymean
-## 2       2    21   Male   C 7665  2  5    7   3.5
-## 1       1    24   Male   T 8760 NA  5    9   5.0
-## 3       3    24 Female   T 8760  3  1    4   2.0</code></pre>
+<pre><code>##   subject years    sex grp days y1 y2 ysum
+## 2       2    21   Male   C 7665  2  5    7
+## 1       1    24   Male   T 8760 NA  5    9
+## 3       3    24 Female   T 8760  3  1    4
+##   ymean
+## 2   3.5
+## 1   5.0
+## 3   2.0</code></pre>
 <p>subsetting when there are missing values</p>
 <pre class="r"><code>dat</code></pre>
-<pre><code>##   subject years    sex grp days y1 y2 ysum ymean
-## 2       2    21   Male   C 7665  2  5    7   3.5
-## 1       1    24   Male   T 8760 NA  5    9   5.0
-## 3       3    24 Female   T 8760  3  1    4   2.0</code></pre>
+<pre><code>##   subject years    sex grp days y1 y2 ysum
+## 2       2    21   Male   C 7665  2  5    7
+## 1       1    24   Male   T 8760 NA  5    9
+## 3       3    24 Female   T 8760  3  1    4
+##   ymean
+## 2   3.5
+## 1   5.0
+## 3   2.0</code></pre>
 <pre class="r"><code>dat$y1 &gt;= 2</code></pre>
 <pre><code>## [1] TRUE   NA TRUE</code></pre>
 <pre class="r"><code>dat[dat$y1 &gt;= 2,] # not good</code></pre>
-<pre><code>##    subject years    sex  grp days y1 y2 ysum ymean
-## 2        2    21   Male    C 7665  2  5    7   3.5
-## NA      NA    NA   &lt;NA&gt; &lt;NA&gt;   NA NA NA   NA    NA
-## 3        3    24 Female    T 8760  3  1    4   2.0</code></pre>
+<pre><code>##    subject years    sex  grp days y1 y2
+## 2        2    21   Male    C 7665  2  5
+## NA      NA    NA   &lt;NA&gt; &lt;NA&gt;   NA NA NA
+## 3        3    24 Female    T 8760  3  1
+##    ysum ymean
+## 2     7   3.5
+## NA   NA    NA
+## 3     4   2.0</code></pre>
 <p>better but complex</p>
 <pre class="r"><code>is.na(dat$y1)</code></pre>
 <pre><code>## [1] FALSE  TRUE FALSE</code></pre>
@@ -1085,37 +1122,56 @@ dat</code></pre>
 <pre class="r"><code>!is.na(dat$y1) &amp; dat$y1 &gt;= 2</code></pre>
 <pre><code>## [1]  TRUE FALSE  TRUE</code></pre>
 <pre class="r"><code>dat[!is.na(dat$y1) &amp; dat$y1 &gt;= 2,]</code></pre>
-<pre><code>##   subject years    sex grp days y1 y2 ysum ymean
-## 2       2    21   Male   C 7665  2  5    7   3.5
-## 3       3    24 Female   T 8760  3  1    4   2.0</code></pre>
+<pre><code>##   subject years    sex grp days y1 y2 ysum
+## 2       2    21   Male   C 7665  2  5    7
+## 3       3    24 Female   T 8760  3  1    4
+##   ymean
+## 2   3.5
+## 3   2.0</code></pre>
 <p>easier</p>
 <pre class="r"><code>dat$y1 &gt;= 2</code></pre>
 <pre><code>## [1] TRUE   NA TRUE</code></pre>
 <pre class="r"><code>which(dat$y1 &gt;= 2)</code></pre>
 <pre><code>## [1] 1 3</code></pre>
 <pre class="r"><code>dat[which(dat$y1 &gt;= 2),]</code></pre>
-<pre><code>##   subject years    sex grp days y1 y2 ysum ymean
-## 2       2    21   Male   C 7665  2  5    7   3.5
-## 3       3    24 Female   T 8760  3  1    4   2.0</code></pre>
+<pre><code>##   subject years    sex grp days y1 y2 ysum
+## 2       2    21   Male   C 7665  2  5    7
+## 3       3    24 Female   T 8760  3  1    4
+##   ymean
+## 2   3.5
+## 3   2.0</code></pre>
 <p>easiest</p>
 <pre class="r"><code>subset(dat, y1 &gt;= 2)</code></pre>
-<pre><code>##   subject years    sex grp days y1 y2 ysum ymean
-## 2       2    21   Male   C 7665  2  5    7   3.5
-## 3       3    24 Female   T 8760  3  1    4   2.0</code></pre>
+<pre><code>##   subject years    sex grp days y1 y2 ysum
+## 2       2    21   Male   C 7665  2  5    7
+## 3       3    24 Female   T 8760  3  1    4
+##   ymean
+## 2   3.5
+## 3   2.0</code></pre>
 <p>a couple other examples</p>
 <pre class="r"><code>dat</code></pre>
-<pre><code>##   subject years    sex grp days y1 y2 ysum ymean
-## 2       2    21   Male   C 7665  2  5    7   3.5
-## 1       1    24   Male   T 8760 NA  5    9   5.0
-## 3       3    24 Female   T 8760  3  1    4   2.0</code></pre>
+<pre><code>##   subject years    sex grp days y1 y2 ysum
+## 2       2    21   Male   C 7665  2  5    7
+## 1       1    24   Male   T 8760 NA  5    9
+## 3       3    24 Female   T 8760  3  1    4
+##   ymean
+## 2   3.5
+## 1   5.0
+## 3   2.0</code></pre>
 <pre class="r"><code>subset(dat, !is.na(y1))</code></pre>
-<pre><code>##   subject years    sex grp days y1 y2 ysum ymean
-## 2       2    21   Male   C 7665  2  5    7   3.5
-## 3       3    24 Female   T 8760  3  1    4   2.0</code></pre>
+<pre><code>##   subject years    sex grp days y1 y2 ysum
+## 2       2    21   Male   C 7665  2  5    7
+## 3       3    24 Female   T 8760  3  1    4
+##   ymean
+## 2   3.5
+## 3   2.0</code></pre>
 <pre class="r"><code>subset(dat, subject != 1)</code></pre>
-<pre><code>##   subject years    sex grp days y1 y2 ysum ymean
-## 2       2    21   Male   C 7665  2  5    7   3.5
-## 3       3    24 Female   T 8760  3  1    4   2.0</code></pre>
+<pre><code>##   subject years    sex grp days y1 y2 ysum
+## 2       2    21   Male   C 7665  2  5    7
+## 3       3    24 Female   T 8760  3  1    4
+##   ymean
+## 2   3.5
+## 3   2.0</code></pre>
 </div>
 
 
