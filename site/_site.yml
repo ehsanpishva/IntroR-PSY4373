@@ -1,7 +1,7 @@
 name: "Introduction to R | PSY4373"
 output: 
   html_document:
-#    number_sections: true#Does add number as prefix
+    #number_sections: true # add number as prefix
     toc: true
     toc_float:
       collapsed: false
