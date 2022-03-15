@@ -36,7 +36,7 @@ For the exercise, you will need this dataset:
 Create a new script file for this exercise and save it to the same directory/folder where you have saved the dataset to. Next, set the working directory to this directory/folder. Then you can import the dataset with:
 
 ```{r, eval = FALSE}
-dat <- read.csv("inflammation-01.csv")
+dat <- read.csv("inflammation.csv")
 ```
 
 The dataset contains a [cytokine](https://en.wikipedia.org/wiki/Cytokine) measurement for 40 consecutive days in 60 individuals.
