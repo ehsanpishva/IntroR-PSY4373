@@ -1,27 +1,21 @@
 ---
-title: "Week 5 - R Markdown"
-author: "Ehsan Pishva"
+title: "Introduction to R | PSY4373"
+subtitle: "Week 5 - Rmarkdown"
 output: html_document
-date: "26-05-2021"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+---
 
-```
+In week 5, we will cover [Rmarkdown](https://rmarkdown.rstudio.com) as a way of writing dynamic reports and papers that are fully reproducible by including the analysis code within the document.
 
-<br>
+The Rmarkdown document for this tutorial:
 
-### **Downloads**
-#### R-markdown (RMD) file
-[Click here to download the RMD file ("example_rmarkdown.rmd")](https://www.dropbox.com/s/owhha3m02k6ijm6/example_rmarkdown.rmd?dl=0)
+- [example_rmarkdown.rmd](FIXME!)
 
+The corresponding bibliography file:
 
-#### References file
-[Click here to download references file ("references.bib")](https://www.dropbox.com/s/e1lb4cebqcz65ew/references.bib?dl=0)
+- [references.bib](FIXME!)
 
-FYI: if you want to generate these reference files yourself, take a look at this [link](https://www.bioinformatics.org/texmed/). It uses NCBI identifiers and converts them to bibtex.
+Note: If you want to generate such a reference file yourself, take a look at this [link](https://www.bioinformatics.org/texmed/). It uses NCBI identifiers and converts them to the BibTeX format.
 
 ---
-<br>
-<br>

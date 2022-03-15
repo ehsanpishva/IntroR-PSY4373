@@ -1,85 +1,84 @@
 ---
-title: "Week 1 Extra"
-author: "Ehsan Pishva"
-date: "21-4-2021"
+title: "Introduction to R | PSY4373"
+subtitle: "Week 1 - Extra"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+---
 
-<br>
+### Self-Study
 
-### **Downloads**
-#### Data
-[Click here to download the data (“inflammation-01.csv”)](https://www.dropbox.com/s/0h5rl8k6hx9se3v/inflammation-01.csv?dl=0)
+For this week's self-study part, you will need these files:
 
-#### R-script
-[Click here to download the R-scripts used in week 1 extra](https://www.dropbox.com/s/9ahsuvxovlca5va/Self-Study_Week1%20Extra.R.r?dl=0)
+- [data_survey.dat](FIX ME!) (the dataset)
+- [data_survey.pdf](FIX ME!) (the corresponding code book)
+- [intro_to_r_week_1_extra.r](FIX ME!) (the R script)
+
+This self-study part covers the following topics:
+
+- data import
+- inspection of data frames
+- summary statistics of quantitative variables
+- frequency tables
+- reading the help file of a function
+- summary statistics for subsets
+- reverse coding items
+- data export
 
 ---
-<br>
-<br>
 
 ### Exercise 1
 
-These exercises all use the  data frame you can dowload from the link provided above ("inflammation-01.csv"). First we need to import it as a variable dat. The dataset contain a cytokine measurement for 40 consecutive days of in 60 individuals.  
+For the exercise, you will need this dataset:
 
-```{r eval = FALSE}
-setwd("C:/Users/e.pishva/Dropbox/Intro to R/data/")
-#Change the working directory
+- [inflammation.csv](FIX ME!)
 
-dat <- read.csv(file = "inflammation-01.csv", header = TRUE, row.names = 1)
+Create a new script file for this exercise and save it to the same directory/folder where you have saved the dataset to. Next, set the working directory to this directory/folder. Then you can import the dataset with:
+
+```{r, eval = FALSE}
+dat <- read.csv("inflammation-01.csv")
 ```
 
+The dataset contains a [cytokine](https://en.wikipedia.org/wiki/Cytokine) measurement for 40 consecutive days in 60 individuals.
 
-1. Select from the data frame 'dat':
+1. Select from the data frame `dat`:
 
     - The element on the 4th row and 2nd column.
-    
+
     - The element on the 7th row and 5th column.
-    
+
     - The 10th row.
-    
+
     - The 3rd column.
 
-<br>
-
-2. Let’s calculate some summary statistics for specific individuals (rows) and days (columns).
+2. Calculate some summary statistics for specific individuals (rows) and days (columns).
 
     - Calculate the mean inflammation score for the first individual.
-    
-    - Calculate the median inflammataion score for the 5th day.
-    
-    - Use min() and max() to calculate the range of values for the 10th individual.
-    
-    - Check you answer with the range() function.
-    
-    - Use quantile() to calculate the [interquartile range] (https://en.wikipedia.org/wiki/Interquartile_range) of the 6th indiviudal.
 
-<br>
+    - Calculate the median inflammation score for the 5th day.
 
-3. Using the inflammation data frame inflammation-01.csv: Let’s pretend there was something wrong with the instrument on the first five days for every second patient (#2, 4, 6, etc.), which resulted in the measurements being twice as large as they should be.
+    - Use `min()` and `max()` to calculate the range of values for the 10th individual.
 
-    - Write a vector containing each affected patient (hint: ? seq)
-    
-    - Create a new data frame with in which you halve the first five days’ values in only those patients
-    
-    - Print out the corrected data frame to check that your code has fixed the problem
+    - Check you answer with the `range()` function.
 
+    - Use `quantile()` to calculate the [interquartile range](https://en.wikipedia.org/wiki/Interquartile_range) of the 6th individual.
 
-<br>
-<br>
+3. Let's pretend there was something wrong with the instrument on the first five days for every second patient (2, 4, 6, etc.), which resulted in the measurements being twice as large as they should be.
 
+    - Write a vector containing each affected patient (hint: `help(seq)`).
 
-### **Solution**
+    - Create a new data frame in which you halve the first five days' values in only those patients.
+
+    - Print out the corrected data frame to check that your code has fixed the problem.
+
+---
+
+### Solution
+
 Go to the link below if you want to compare your script to the solution.
 
-
-
-[Solution script GitHub](https://github.com/ehsanpishva/IntroR-PSY4373/blob/main/Scripts/IntroR_solution_exercise_1.R) 
-
-
+[Solution script GitHub](https://github.com/ehsanpishva/IntroR-PSY4373/blob/main/Scripts/IntroR_solution_exercise_1.R)
 
 [Solution script RAW](https://raw.githubusercontent.com/ehsanpishva/IntroR-PSY4373/main/Scripts/IntroR_solution_exercise_1.R)
+
+---

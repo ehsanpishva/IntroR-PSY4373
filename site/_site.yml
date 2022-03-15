@@ -1,5 +1,5 @@
 name: "Introduction to R | PSY4373"
-output: 
+output:
   html_document:
     #number_sections: true # add number as prefix
     toc: true

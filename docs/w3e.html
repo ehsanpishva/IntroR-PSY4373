@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Ehsan Pishva" />
 
 
-<title>Week 3 - Extra - Statistics for categorical outcomes</title>
+<title>Introduction to R | PSY4373</title>
 
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -372,51 +371,50 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Week 3 - Extra - Statistics for categorical outcomes</h1>
-<h4 class="author">Ehsan Pishva</h4>
-<h4 class="date">14-5-2021</h4>
+<h1 class="title toc-ignore">Introduction to R | PSY4373</h1>
+<h3 class="subtitle">Week 3 - Extra</h3>
 
 </div>
 
 
-<p><br></p>
-<div id="downloads" class="section level3">
-<h3><strong>Downloads</strong></h3>
-<div id="data-dictionary-file-describes-the-variables" class="section level4">
-<h4>Data dictionary file (describes the variables)</h4>
-<p><a href="https://www.dropbox.com/s/2xwqrk6dypbx4d0/data_survey.pdf?dl=0">Click here to download the data dictionary file</a></p>
-</div>
-<div id="r-data-file" class="section level4">
-<h4>R-data file</h4>
-<p><a href="https://www.dropbox.com/s/x4a0m9easgkynsl/data_survey_edit.rdata?dl=0">Click here to download the Rdata file (“data_survey_edit.rdata”)</a></p>
-</div>
-<div id="statistics-r-script" class="section level4">
-<h4>Statistics R-script</h4>
-<p><a href="https://www.dropbox.com/s/0m0uzsf82c0uvfj/Self-Study_Week3%20Extra.R?dl=0">Click here to download the R-script used in week 3 extra</a></p>
 <hr />
-<p><br> <br></p>
-</div>
+<div id="self-study" class="section level3">
+<h3>Self-Study</h3>
+<p>For this week’s self-study part, you will need these files:</p>
+<ul>
+<li><a href="FIX%20ME!">data_survey_edit.rdata</a> (the dataset after the data preparation)</li>
+<li><a href="FIX%20ME!">data_survey.pdf</a> (the corresponding code book)</li>
+<li><a href="FIX%20ME!">intro_to_r_week_3_extra.r</a> (the R script)</li>
+</ul>
+<p>This self-study part covers the following topics:</p>
+<ul>
+<li>one- and two-way contingency tables</li>
+<li>chi-square test for association between two categorical variables</li>
+<li>Fisher’s exact test</li>
+<li>logistic regression</li>
+<li>ROC curves</li>
+</ul>
+<hr />
 </div>
 <div id="excercise-3" class="section level3">
 <h3>Excercise 3</h3>
-<p>These variables all use the data frame (“data_survey_edit.rdata”). A data dictionary is provided to describe the variables in the dataset.</p>
+<p>In this exercise, we will continue to work with the dataset in <code>data_survey_edit.rdata</code>.</p>
 <p>Part A:</p>
 <ul>
-<li><p>Test whether the perceived stress level differ between the primary sources of stress</p></li>
-<li><p>Test if the impact of the stress sources on stress level is dependent on sex</p></li>
-<li><p>Create a boxplot illustrating the comparison tested in Q3</p></li>
+<li><p>Test whether the perceived stress level differs between the primary sources of stress.</p></li>
+<li><p>Test if the impact of the stress sources on stress level is dependent on sex.</p></li>
+<li><p>Create a boxplot illustrating the comparison tested in the previous question.</p></li>
 </ul>
-<p><br></p>
 <p>Part B:</p>
 <ul>
 <li><p>Test the association between the Pearlin Mastery Scale and the perceived stress level.</p></li>
-<li><p>Adjust the association tested in Q1 for age and sex and education</p></li>
-<li><p>Plot the association betwee the two variables and fit the regression coefficient line</p></li>
-<li><p>Use plot() for the result object obtained form the above association, place them in a 2x2 layout and try to interpret the generated plots</p></li>
-<li><p>Test the correlation between sub-items of Pearlin Mastery Scale (mastery1, mastery2,…) and report the regression coefficients and p values</p></li>
-<li><p>Create a scatterplot matrix of the sub-items tested in Q4</p></li>
+<li><p>Adjust the association tested in Q1 for age and sex and education.</p></li>
+<li><p>Plot the association between the two variables and fit the regression coefficient line.</p></li>
+<li><p>Use <code>plot()</code> for the result object obtained form the above association, place them in a 2x2 layout, and try to interpret the generated plots.</p></li>
+<li><p>Test the correlation between sub-items of Pearlin Mastery Scale (<code>mastery1</code>, <code>mastery2</code>, …) and report the regression coefficients and p values.</p></li>
+<li><p>Create a scatterplot matrix of the sub-items tested in Q4.</p></li>
 </ul>
-<p><br> <br></p>
+<hr />
 </div>
 <div id="solution" class="section level3">
 <h3><strong>Solution</strong></h3>

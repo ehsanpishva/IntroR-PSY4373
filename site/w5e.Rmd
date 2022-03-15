@@ -1,19 +1,16 @@
 ---
-title: "Week 5 Assignment"
-author: "Ehsan Pishva"
-date: "31-5-2021"
+title: "Introduction to R | PSY4373"
+subtitle: "Week 5 - Extra"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-<br>
+---
 
 ### **Downloads**
+
 #### miRNA data
-[Click here to download the miRNA data](https://www.dropbox.com/s/n80v2kfvvfo054l/miRNAdata.Rdata?dl=0)
+
+[Click here to download the miRNA data](https://www.dropbox.com/s/n80v2kfvvfo054l/miRNAdata.Rdata?dl=1)
 
 ---
 <br>
@@ -21,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Excercise 5
 
-For the last exercise we aim to generate the results from Excercise 4 in a R Markdown format 
+For the last exercise we aim to generate the results from Excercise 4 in a R Markdown format
 
 1. File -> New File -> R Markdown -> choose HTML output and name it as Exercise5_YOURNAME.
 
@@ -29,7 +26,7 @@ For the last exercise we aim to generate the results from Excercise 4 in a R Mar
 
 3. Make a table of top 10 most significant miRNAs inclding ("Estimate","SE","t","P")
 
-4. Create a boxplot of the top 2 miRNAs with jitters; low Braak is green and high Braak staging is Red. The boxplots layout should be in one row and two columns. 
+4. Create a boxplot of the top 2 miRNAs with jitters; low Braak is green and high Braak staging is Red. The boxplots layout should be in one row and two columns.
 
 5. Use function "get_multimir" in the package and extract the validated mRNA targets for the top two most significant miRNAs in association with AD pathology. (The input will both miRNAs at the same time!!) Please make the code visible.
 
@@ -37,12 +34,6 @@ For the last exercise we aim to generate the results from Excercise 4 in a R Mar
 
 6. Use function enrichKEGG, enrichGO (for both MF and BP) and use the vector you generated from the target_entrez as an input. (Make the codes visible)
 
-7. Print the table of KEGG pathway analysis in your HTML output. 
+7. Print the table of KEGG pathway analysis in your HTML output.
 
-8. Use dotplot function to plot the top 20 KEGG pathways and print it in your final output file. 
-
-
-
-
-
-
+8. Use dotplot function to plot the top 20 KEGG pathways and print it in your final output file.

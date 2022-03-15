@@ -1,76 +1,61 @@
 ---
-title: "Week 3 - Extra - Statistics for categorical outcomes"
-author: "Ehsan Pishva"
+title: "Introduction to R | PSY4373"
+subtitle: "Week 3 - Extra"
 output: html_document
-date: "14-5-2021"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+---
 
-```
+### Self-Study
 
-<br>
+For this week's self-study part, you will need these files:
 
-### **Downloads**
-#### Data dictionary file (describes the variables)
-[Click here to download the data dictionary file](https://www.dropbox.com/s/2xwqrk6dypbx4d0/data_survey.pdf?dl=0)
+- [data_survey_edit.rdata](FIX ME!) (the dataset after the data preparation)
+- [data_survey.pdf](FIX ME!) (the corresponding code book)
+- [intro_to_r_week_3_extra.r](FIX ME!) (the R script)
 
+This self-study part covers the following topics:
 
-#### R-data file
-[Click here to download the Rdata file ("data_survey_edit.rdata")](https://www.dropbox.com/s/x4a0m9easgkynsl/data_survey_edit.rdata?dl=0)
-
-
-#### Statistics R-script
-[Click here to download the R-script used in week 3 extra](https://www.dropbox.com/s/0m0uzsf82c0uvfj/Self-Study_Week3%20Extra.R?dl=0)
+- one- and two-way contingency tables
+- chi-square test for association between two categorical variables
+- Fisher's exact test
+- logistic regression
+- ROC curves
 
 ---
-<br>
-<br>
 
 ### Excercise 3
 
-These variables all use the  data frame ("data_survey_edit.rdata"). A data dictionary is provided to describe the variables in the dataset. 
+In this exercise, we will continue to work with the dataset in `data_survey_edit.rdata`.
 
 Part A:
 
-  - Test whether the perceived stress level differ between the primary sources of stress
-  
-  - Test if the impact of the stress sources on stress level is dependent on sex
-  
-  - Create a boxplot illustrating the comparison tested in Q3
-	
-<br>
+  - Test whether the perceived stress level differs between the primary sources of stress.
+
+  - Test if the impact of the stress sources on stress level is dependent on sex.
+
+  - Create a boxplot illustrating the comparison tested in the previous question.
 
 Part B:
 
   - Test the association between the Pearlin Mastery Scale and the perceived stress level.
-  
-  - Adjust the association tested in Q1 for age and sex and education 
-  
-  - Plot the association betwee the two variables and fit the regression coefficient line
-  
-  - Use plot() for the result object obtained form the above association, place them in a 2x2 layout and try to interpret the generated plots
-  
-  - Test the correlation between sub-items of Pearlin Mastery Scale (mastery1, mastery2,...) and report the regression coefficients and p values
-  
-  - Create a scatterplot matrix of the sub-items tested in Q4 
 
+  - Adjust the association tested in Q1 for age and sex and education.
 
+  - Plot the association between the two variables and fit the regression coefficient line.
 
-<br>
-<br>
+  - Use `plot()` for the result object obtained form the above association, place them in a 2x2 layout, and try to interpret the generated plots.
+
+  - Test the correlation between sub-items of Pearlin Mastery Scale (`mastery1`, `mastery2`, ...) and report the regression coefficients and p values.
+
+  - Create a scatterplot matrix of the sub-items tested in Q4.
+
+---
 
 ### **Solution**
+
 Go to the link below if you want to compare your script to the solution.
 
-
-
-[Solution script GitHub](https://github.com/ehsanpishva/IntroR-PSY4373/blob/main/Scripts/IntroR_solution_exercise_3.R) 
-
-
+[Solution script GitHub](https://github.com/ehsanpishva/IntroR-PSY4373/blob/main/Scripts/IntroR_solution_exercise_3.R)
 
 [Solution script RAW](https://raw.githubusercontent.com/ehsanpishva/IntroR-PSY4373/main/Scripts/IntroR_solution_exercise_3.R)
-
-
-

@@ -1,13 +1,17 @@
 ---
-title: "PSY4373: Introduction to R"
+title: "Introduction to R | PSY4373"
+author:
+  - "Ehsan Pishva"
+  - "Wolfgang Viechtbauer"
 output: html_document
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 ---
 
-## Description
+### Description
 
 R is a programming language and software environment for carrying out computations, manipulating and analyzing data, and creating various types of plots and graphics. R has become the 'lingua franca of statistics' and the software of choice for analyzing data in various disciplines. The purpose of this course is to lay the necessary foundation for becoming a proficient R user.
 
-## Contents
+### Contents
 
 In this course, we will cover:
 
@@ -23,10 +27,18 @@ In this course, we will cover:
 - add-on packages (how to find, install, and work with them)
 - how/where to obtain help when you get stuck
 - basic programming structures (e.g., loops, if-else statements)
-- writing documents with R Markdown
+- writing documents with Rmarkdown
 - applications of R in pathway analysis (FN) and drug repositioning (DN)
 
-## Links
+### Preparations
+
+1. You will need to **install the current version of R** on your computer (the current version is 4.1.3). You can download R from the [Comprehensive R Archive Network](https://cran.r-project.org) (CRAN). If you use Windows, choose "Download R for Windows", then "base", and then download and run the setup program. You can go with the default settings during the installation process. R is also available for macOS and Linux for those using these operating systems (installation instructions can be found on CRAN).
+
+   If you already have R installed on your computer, please check its version number and release date (just start R and it will tell you at the very top). If you do not have the current version installed, please update to the current version (just follow the instructions above).
+
+2. Please also **install RStudio**, an integrated development environment (IDE) for R. It provides some useful features that make it a bit easier to work with R (to be discussed in more detail during the course). You can download RStudio for free from [here](https://www.rstudio.com/products/rstudio/download/#download). Download the appropriate file (Windows / macOS / etc) and install it in the usual manner (note that you must have R installed first for RStudio to work).
+
+### Links
 
 - [UM Page for PSY4371](https://www.maastrichtuniversity.nl/meta/416322/introduction-r)
 - [R Project Website](https://www.r-project.org)

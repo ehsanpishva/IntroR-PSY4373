@@ -1,29 +1,31 @@
 ---
-title: "Week 3 - Statistics for continuous outcomes"
-author: "Ehsan Pishva"
+title: "Introduction to R | PSY4373"
+subtitle: "Week 3 - Statistics for Continuous Outcomes"
 output: html_document
-date: "05-05-2021"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+---
 
-```
+Week 3 is all about various types of statistical tests / models. We will examine for to carry out the following types of analyses:
 
-<br>
+- t-tests
+- one-way ANOVAs
+- pairwise comparisons
+- two-way ANOVAs
+- correlations
+- linear regression models
+- regression with a transformed outcome variable
+- polynomial regression models
+- categorical predictors in regression models
+- ANCOVAs
+- smoothers
 
-### **Downloads**
-#### Data dictionary file (describes the variables)
-[Click here to download the data dictionary file](https://www.dropbox.com/s/2xwqrk6dypbx4d0/data_survey.pdf?dl=0)
+The R script for this tutorial:
 
+- [intro_to_r_week_3.r](FIXME!)
 
-#### R-data file
-[Click here to download the Rdata file ("data_survey_edit.rdata")](https://www.dropbox.com/s/x4a0m9easgkynsl/data_survey_edit.rdata?dl=0)
+The dataset for this tutorial:
 
-
-#### Statistics R-script
-[Click here to download the Statistics R-script used in week 3](https://www.dropbox.com/s/mb9g5h57n7u338g/Week3.R?dl=0)
+- [data_survey_edit.rdata](FIXME!)
 
 ---
-<br>
-<br>

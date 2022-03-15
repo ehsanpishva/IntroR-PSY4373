@@ -1,24 +1,36 @@
 ---
-title: "Week 2 - Basic plotting in R"
-author: "Ehsan Pishva"
+title: "Introduction to R | PSY4373"
+subtitle: "Week 2 - Plotting with R"
 output: html_document
-date: "28-04-2021"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+---
 
-```
+### Description
 
-<br>
+In week 2, we will take a look at some ways of creatings various types of graphs and plots with R. In particular, we will cover the following topics:
 
-### **Downloads**
-#### R-data file
-[Click here to download the Rdata file](https://www.dropbox.com/s/x4a0m9easgkynsl/data_survey_edit.rdata?dl=0)
+- barplots
+- histograms
+- specifying colors
+- boxplots
+- kernel density estimation
+- scatterplots
+- binning / jittering / alpha blending
+- installing R packages
+- saving figures
+- 2d kernel density estimation
+- contour plots
+- 3d perspective plots
+- subplots
+- building plots
 
-#### R-script
-[Click here to download the R-scripts used in week 2](https://www.dropbox.com/s/gq16tis1v8if8xe/Week2.R?dl=0)
+The R script for this tutorial:
+
+- [intro_to_r_week_2.r](FIXME!)
+
+The dataset for this tutorial:
+
+- [data_survey_edit.rdata](FIXME!)
 
 ---
-<br>
-<br>
