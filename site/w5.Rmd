@@ -16,6 +16,8 @@ The corresponding bibliography file:
 
 - [references.bib](FIXME!)
 
-Note: If you want to generate such a reference file yourself, take a look at this [link](https://www.bioinformatics.org/texmed/). It uses NCBI identifiers and converts them to the BibTeX format.
+Note: If you need to generate such a reference file yourself, take a look at this [link](https://www.bioinformatics.org/texmed/). It uses NCBI identifiers and converts them to the BibTeX format.
+
+Instructions for exporting references from an Endnote library in the appropriate format for inclusion in an Rmarkdown document can be found [here](https://www.themillerlab.io/post/reference_management_in_rmarkdown/).
 
 ---
