@@ -41,6 +41,7 @@ In this course, we will cover:
 ### Links
 
 - [UM Page for PSY4371](https://www.maastrichtuniversity.nl/meta/416322/introduction-r)
+- [Canvas Page for PSY4371](https://maastrichtuniversity.instructure.com/courses/9588)
 - [R Project Website](https://www.r-project.org)
 - [Comprehensive R Archive Network](https://cran.r-project.org)
 - [RStudio Download](https://www.rstudio.com/products/rstudio/download/#download)
