@@ -8,11 +8,7 @@ output: html_document
 
 ### Description
 
-In week 1, we will start with a brief presentation to describe the course structure and to briefly introduce R and RStudio.
-
-You can download the presentation [here](FIXME!).
-
-We will then dive into R together and cover the following topics in a hands-on tutorial:
+In week 1, we will dive into R together and cover the following topics in a hands-on tutorial:
 
 - working with R through RStudio
 - the concept of a 'working directory'
