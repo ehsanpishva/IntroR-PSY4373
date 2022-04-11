@@ -1,5 +1,49 @@
 ############################################################################
 
+# What is R?
+
+# - R is a system for the manipulation, statistical and numerical analysis,
+#   and graphical display of data
+# - freely available under the GNU General Public License (GPL)
+# - open-source and free/libre
+# - runs under Windows, macOS, Unix/Linux, ...
+
+# Why is it Called R?
+
+# - in 1992, *R*obert Gentleman and *R*oss Ihaka started developing this
+#   programming language: https://en.wikipedia.org/wiki/R_(programming_language)
+
+# Why R?
+
+# - R code is great for reproducibility
+# - R is interdisciplinary and extensible
+# - R works on data of all shapes and sizes
+# - R produces high-quality graphics
+# - R has a large user community
+# - not only is R free, but it is also open-source and cross-platform
+
+# Working with R
+
+# - R is command-driven (no point-and-click interface)
+# - an 'object-oriented' and 'functional' language
+# - R console: where you enter the commands
+# - symbol at beginning of line (>): the 'prompt'
+
+# RStudio
+
+# - an 'integrated development environment' (IDE) for R
+# - freely available, open-source, cross-platform
+# - makes working wit R a lot more pleasant
+
+# Always Use Script Files
+
+# - promotes organized programming/analyses and code reuse
+# - increases replicability
+# - easier to fix errors/mistakes
+# - RStudio has a nice built-in script editor
+
+############################################################################
+
 # start RStudio
 
 # open this script: Menu 'File' - Open File (or Ctrl+o / Command+o)
