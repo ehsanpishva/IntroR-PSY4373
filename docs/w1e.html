@@ -13,6 +13,7 @@
 
 <title>Introduction to R | PSY4373</title>
 
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -332,6 +333,9 @@ div.tocify {
 <li>
   <a href="w1.html">Week 1</a>
 </li>
+<li>
+  <a href="w1e.html">Week 1 (extra)</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -355,9 +359,15 @@ div.tocify {
 <h3>Self-Study</h3>
 <p>For this week’s self-study part, you will need these files:</p>
 <ul>
-<li><a href="FIX%20ME!">data_survey.dat</a> (the dataset)</li>
-<li><a href="FIX%20ME!">data_survey.pdf</a> (the corresponding code book)</li>
-<li><a href="FIX%20ME!">intro_to_r_week_1_extra.r</a> (the R script)</li>
+<li><a
+href="https://www.dropbox.com/s/trpl9x5sye3gl53/data_survey.dat?dl=0">data_survey.dat</a>
+(the dataset)</li>
+<li><a
+href="https://www.dropbox.com/s/kbfisevspr0sk4m/data_survey.pdf?dl=0">data_survey.pdf</a>
+(the corresponding code book)</li>
+<li><a
+href="https://www.dropbox.com/s/p6rxk62be4y7dem/intro_to_r_week_1_extra.r?dl=0">intro_to_r_week_1_extra.r</a>
+(the R script)</li>
 </ul>
 <p>This self-study part covers the following topics:</p>
 <ul>
@@ -376,11 +386,17 @@ div.tocify {
 <h3>Exercise 1</h3>
 <p>For the exercise, you will need this dataset:</p>
 <ul>
-<li><a href="FIX%20ME!">inflammation.csv</a></li>
+<li><a
+href="https://www.dropbox.com/s/ej9ncf8655i8aqn/inflammation.csv?dl=0">inflammation.csv</a></li>
 </ul>
-<p>Create a new script file for this exercise and save it to the same directory/folder where you have saved the dataset to. Next, set the working directory to this directory/folder. Then you can import the dataset with:</p>
+<p>Create a new script file for this exercise and save it to the same
+directory/folder where you have saved the dataset to. Next, set the
+working directory to this directory/folder. Then you can import the
+dataset with:</p>
 <pre class="r"><code>dat &lt;- read.csv(&quot;inflammation.csv&quot;)</code></pre>
-<p>The dataset contains a <a href="https://en.wikipedia.org/wiki/Cytokine">cytokine</a> measurement for 40 consecutive days in 60 individuals.</p>
+<p>The dataset contains a <a
+href="https://en.wikipedia.org/wiki/Cytokine">cytokine</a> measurement
+for 40 consecutive days in 60 individuals.</p>
 <ol style="list-style-type: decimal">
 <li><p>Select from the data frame <code>dat</code>:</p>
 <ul>
@@ -389,19 +405,29 @@ div.tocify {
 <li><p>The 10th row.</p></li>
 <li><p>The 3rd column.</p></li>
 </ul></li>
-<li><p>Calculate some summary statistics for specific individuals (rows) and days (columns).</p>
+<li><p>Calculate some summary statistics for specific individuals (rows)
+and days (columns).</p>
 <ul>
-<li><p>Calculate the mean inflammation score for the first individual.</p></li>
+<li><p>Calculate the mean inflammation score for the first
+individual.</p></li>
 <li><p>Calculate the median inflammation score for the 5th day.</p></li>
-<li><p>Use <code>min()</code> and <code>max()</code> to calculate the range of values for the 10th individual.</p></li>
+<li><p>Use <code>min()</code> and <code>max()</code> to calculate the
+range of values for the 10th individual.</p></li>
 <li><p>Check you answer with the <code>range()</code> function.</p></li>
-<li><p>Use <code>quantile()</code> to calculate the <a href="https://en.wikipedia.org/wiki/Interquartile_range">interquartile range</a> of the 6th individual.</p></li>
+<li><p>Use <code>quantile()</code> to calculate the <a
+href="https://en.wikipedia.org/wiki/Interquartile_range">interquartile
+range</a> of the 6th individual.</p></li>
 </ul></li>
-<li><p>Let’s pretend there was something wrong with the instrument on the first five days for every second patient (2, 4, 6, etc.), which resulted in the measurements being twice as large as they should be.</p>
+<li><p>Let’s pretend there was something wrong with the instrument on
+the first five days for every second patient (2, 4, 6, etc.), which
+resulted in the measurements being twice as large as they should be.</p>
 <ul>
-<li><p>Write a vector containing each affected patient (hint: <code>help(seq)</code>).</p></li>
-<li><p>Create a new data frame in which you halve the first five days’ values in only those patients.</p></li>
-<li><p>Print out the corrected data frame to check that your code has fixed the problem.</p></li>
+<li><p>Write a vector containing each affected patient (hint:
+<code>help(seq)</code>).</p></li>
+<li><p>Create a new data frame in which you halve the first five days’
+values in only those patients.</p></li>
+<li><p>Print out the corrected data frame to check that your code has
+fixed the problem.</p></li>
 </ul></li>
 </ol>
 <hr />
