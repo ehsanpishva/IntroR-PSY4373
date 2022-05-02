@@ -31,7 +31,7 @@ This self-study part covers the following topics:
 
 For the exercise, you will need this dataset:
 
-- [inflammation.csv](https://www.dropbox.com/s/ej9ncf8655i8aqn/inflammation.csv?dl=0)
+- [inflammation.csv](https://www.dropbox.com/s/ej9ncf8655i8aqn/inflammation.csv?dl=1)
 
 Create a new script file for this exercise and save it to the same directory/folder where you have saved the dataset to. Next, set the working directory to this directory/folder. Then you can import the dataset with:
 
