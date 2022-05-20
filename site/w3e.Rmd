@@ -12,7 +12,7 @@ For this week's self-study part, you will need these files:
 
 - [data_survey_edit.rdata](https://www.dropbox.com/s/ti8z282h15dyutx/data_survey_edit.rdata?dl=1) (the dataset after the data preparation)
 - [data_survey.pdf](https://www.dropbox.com/s/kbfisevspr0sk4m/data_survey.pdf?dl=1) (the corresponding code book)
-- [intro_to_r_week_3_extra.r](https://www.dropbox.com/s/wfx0lgmhz0ofsya/intro_to_r_week_3_extra.r?dl=1) (the R script)
+- [intro_to_r_week_3_extra.r](https://www.dropbox.com/s/cp67zexkqgxw5y2/intro_to_r_week_3_extra.r?dl=1) (the R script)
 
 This self-study part covers the following topics:
 
