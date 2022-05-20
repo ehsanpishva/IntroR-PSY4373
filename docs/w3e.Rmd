@@ -1,0 +1,55 @@
+---
+title: "Introduction to R | PSY4373"
+subtitle: "Week 3 - Extra"
+output: html_document
+---
+
+---
+
+### Self-Study
+
+For this week's self-study part, you will need these files:
+
+- [data_survey_edit.rdata](https://www.dropbox.com/s/ti8z282h15dyutx/data_survey_edit.rdata?dl=1) (the dataset after the data preparation)
+- [data_survey.pdf](https://www.dropbox.com/s/kbfisevspr0sk4m/data_survey.pdf?dl=1) (the corresponding code book)
+- [intro_to_r_week_3_extra.r](https://www.dropbox.com/s/wfx0lgmhz0ofsya/intro_to_r_week_3_extra.r?dl=1) (the R script)
+
+This self-study part covers the following topics:
+
+- one- and two-way contingency tables
+- chi-square test for association between two categorical variables
+- Fisher's exact test
+- logistic regression
+- ROC curves
+
+---
+
+### Excercise 3
+
+In this exercise, we will continue to work with the dataset in `data_survey_edit.rdata`.
+
+Part A:
+
+  - Test whether the perceived stress level differs between the primary sources of stress.
+
+  - Test if the impact of the stress sources on stress level is dependent on sex.
+
+  - Create a boxplot illustrating the comparison tested in the previous question.
+
+Part B:
+
+  - Test the association between the Pearlin Mastery Scale and the perceived stress level.
+
+  - Adjust the association tested in Q1 for age and sex and education.
+
+  - Plot the association between the two variables and fit the regression coefficient line.
+
+  - Use `plot()` for the result object obtained form the above association, place them in a 2x2 layout, and try to interpret the generated plots.
+
+  - Test the correlation between sub-items of Pearlin Mastery Scale (`mastery1`, `mastery2`, ...) and report the regression coefficients and p values.
+
+  - Create a scatterplot matrix of the sub-items tested in Q4.
+
+---
+
+
