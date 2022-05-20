@@ -21,8 +21,8 @@ navbar:
       href: w2e.html
     - text: "Week 3"
       href: w3.html
-    # - text: "Week 3 (extra)"
-    #   href: w3e.html
+    - text: "Week 3 (extra)"
+      href: w3e.html
     # - text: "Week 4"
     #   href: w4.html
     # - text: "Week 4 (extra)"
