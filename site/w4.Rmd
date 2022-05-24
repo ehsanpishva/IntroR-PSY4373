@@ -24,11 +24,11 @@ In week 4, we will discuss how to work with R packages (we have already done so,
 
 The R script for this tutorial:
 
-- [intro_to_r_week_4.r](FIXME!)
+- [intro_to_r_week_4.r](https://www.dropbox.com/s/9qt6k44s7i74o5s/intro_to_r_week_4.r?dl=1)
 
 The datasets for this tutorial:
 
-- [data_survey_edit.rdata](FIXME!)
-- [mirnadata.rdata](FIXME!)
+- [data_survey_edit.rdata](https://www.dropbox.com/s/yg6sf2yei7s544x/data_survey_edit.rdata?dl=1)
+- [mirnadata.rdata](https://www.dropbox.com/s/e698ayslcpgsp2v/mirnadata.rdata?dl=1)
 
 ---

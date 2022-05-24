@@ -10,11 +10,11 @@ In week 5, we will cover [Rmarkdown](https://rmarkdown.rstudio.com) as a way of 
 
 The Rmarkdown document for this tutorial:
 
-- [example_rmarkdown.rmd](FIXME!)
+- [example_rmarkdown.rmd](https://www.dropbox.com/s/jg3yp1o0waeflmi/example_rmarkdown.rmd?dl=1)
 
 The corresponding bibliography file:
 
-- [references.bib](FIXME!)
+- [references.bib](https://www.dropbox.com/s/upn1lsjfeclj9m2/references.bib?dl=1)
 
 Note: If you need to generate such a reference file yourself, take a look at this [link](https://www.bioinformatics.org/texmed/). It uses NCBI identifiers and converts them to the BibTeX format.
 

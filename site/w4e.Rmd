@@ -18,7 +18,7 @@ There are two different exercises that you can choose from for this week. The fi
 
 For this exercise, you will need this dataset:
 
-- [mirnadata.rdata](FIX ME!)
+- [mirnadata.rdata](https://www.dropbox.com/s/e698ayslcpgsp2v/mirnadata.rdata?dl=1)
 
 1. The code for a differential miRNA expression analysis of Alzheimers disease in post-mortem brains is pasted below (remember to set the working directory before trying to load the dataset).
 
@@ -81,7 +81,7 @@ library(clusterProfiler)
 
 For this exercise, you will need this dataset:
 
-- [data_bdi.dat](FIX ME!)
+- [data_bdi.dat](https://www.dropbox.com/s/bi3s4t143n4oem3/data_bdi.dat?dl=1)
 
 The dataset includes the responses of 276 patients with obsessive-compulsive disorder (OCD) to the 21 items on the [Beck Depression Inventory](https://en.wikipedia.org/wiki/Beck_Depression_Inventory). The patients were assessed twice, with a one-year delay between the two assessments.
 
@@ -133,3 +133,5 @@ library(mclust)
 7. Which items cluster together into the first and second groups?
 
 8. Repeat step 6. but now specify that you want between 1 and 6 clusters. The `Mclust` function will determine the optimal number of clusters according to the BIC (here, a higher value of the BIC indicates a better tradeoff between the fit of the mixture model and its complexity). What number of clusters has the highest BIC? Create a plot of the BIC values (read `help(plot.Mclust)` to see how this can be done).
+
+---
