@@ -12,17 +12,17 @@ There is no self-study part for this week.
 
 ---
 
-### Excercise 4
+There are two different exercises that you can choose from for this week. The first one is more aimed at students from FN and DN, the second for those from the PP track (but you are free to choose whatever exercise you prefer, regardless of your track).
 
-For the exercise, you will need this dataset:
+### Excercise 4a
+
+For this exercise, you will need this dataset:
 
 - [mirnadata.rdata](FIX ME!)
 
-1. The code for a differential miRNA expression analysis of Alzheimers disease post-mortem brains are pasted below.
+1. The code for a differential miRNA expression analysis of Alzheimers disease in post-mortem brains is pasted below (remember to set the working directory before trying to load the dataset).
 
 ```{r c1, eval = FALSE}
-#setwd("")
-
 load("mirnadata.rdata")
 
 res <- matrix(data=NA, nrow=490, ncol=4)
@@ -40,23 +40,96 @@ res <- res[order(res[,4]),]
 2. Install the package [multiMiR](https://www.bioconductor.org/packages/release/bioc/html/multiMiR.html) with:
 
 ```{r c2, eval = FALSE}
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-
+install.packages("BiocManager")
 BiocManager::install("multiMiR")
 ```
 
-3. Use the `get_multimir` function from the package and extract the validated mRNA targets for the top (i.e., most significant) two deferentially expressed miRNAs in association with AD pathology.
+Then load the package with:
 
-4. Generate a vector from the column called `target_entrez` in the table of results return by `get_multimir` function.
+```{r c3, eval = FALSE}
+library(multiMiR)
+```
+
+3. Use the `get_multimir` function from the package and extract the validated mRNA targets for the top (i.e., most significant) two deferentially expressed miRNAs in association with AD pathology (read `help(get_multimir)` carefully to check which argument of the function you have to use to specify the two miRNAs and also carefully check how the names of the two miRNAs need to be specified so that they can be looked up). Put the results that the function returns into an object called `top2`.
+
+4. Generate a vector from the column called `target_entrez` in the table of results returned by the `get_multimir` function. You can do this with:
+
+```{r c4, eval = FALSE}
+targets <- as.data.frame(top2@data)$target_entrez
+```
 
 5. Install packages [clusterProfiler](https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html) and [org.Hs.eg.db](https://bioconductor.org/packages/release/data/annotation/html/org.Hs.eg.db.html) with:
 
-```{r c3, eval = FALSE}
+```{r c5, eval = FALSE}
 BiocManager::install("clusterProfiler")
 BiocManager::install("org.Hs.eg.db")
 ```
 
-6. Use the `enrichKEGG` function and use the vector you generated from the `target_entrez` as input.
+Then load the `clusterProfiler` package with:
 
-7. Write the table of KEGG pathway analysis and upload that together with you script.
+```{r c6, eval = FALSE}
+library(clusterProfiler)
+```
+
+6. Use the `enrichKEGG` function from the `clusterProfiler` package and use the `targets` vector you generated above as input.
+
+7. Write the table of the KEGG pathway analysis to a file (use the `write.table` function; see the week 1 extra part) and upload that together with your script.
+
+---
+
+### Excercise 4b
+
+For this exercise, you will need this dataset:
+
+- [data_bdi.dat](FIX ME!)
+
+The dataset includes the responses of 276 patients with obsessive-compulsive disorder (OCD) to the 21 items on the [Beck Depression Inventory](https://en.wikipedia.org/wiki/Beck_Depression_Inventory). The patients were assessed twice, with a one-year delay between the two assessments.
+
+The items on the BDI measure the following indicators of depression:
+
+      1)  Sadness
+      2)  Pessimism
+      3)  Sense of Failure
+      4)  Dissatisfaction
+      5)  Guilt
+      6)  Sense of Punishment
+      7)  Dislike of Self
+      8)  Self Accusation
+      9)  Suicidal Ideation
+      10) Episodes of Crying
+      11) Irritability
+      12) Social Withdrawal
+      13) Indecisiveness
+      14) Negative Body Image
+      15) Retardation / Work Inhibition
+      16) Insomnia
+      17) Fatigability
+      18) Loss of Appetite
+      19) Loss of Weight
+      20) Somatic Preoccupation
+      21) Loss of Libido
+
+1. Read in the dataset using the `read.table` function.
+
+2. Create a vector with 21 missing values with:
+
+```{r c7, eval = FALSE}
+cors <- rep(NA, 21)
+```
+
+3. For each of the 21 items, correlate the pre- and post-assessment scores. Use a loop to do this. Save the results into the `cors` vector.
+
+4. Which item correlates the weakest? Which item correlates the strongest? What is the average correlation?
+
+5. Let's see if the 21 items can be clustered into different groups based on their pre to post correlations. Install and load the [mclust](https://cran.r-project.org/package=mclust) package with:
+
+```{r c8, eval = FALSE}
+install.packages("mclust")
+library(mclust)
+```
+
+6. Use the `Mclust` function from the package to run a cluster analysis (using a [mixture model](https://en.wikipedia.org/wiki/Mixture_model)) with the correlations as input. Specify that you want 2 clusters. For the model type (`modelNames`), specify that you want type `"E"` (which asumes that the variance of the correlations within clusters is the same for the 2 clusters).
+
+7. Which items cluster together into the first and second groups?
+
+8. Repeat step 6. but now specify that you want between 1 and 6 clusters. The `Mclust` function will determine the optimal number of clusters according to the BIC (here, a higher value of the BIC indicates a better tradeoff between the fit of the mixture model and its complexity). What number of clusters has the highest BIC? Create a plot of the BIC values (read `help(plot.Mclust)` to see how this can be done).

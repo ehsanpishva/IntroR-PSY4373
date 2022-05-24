@@ -353,6 +353,9 @@ div.tocify {
 <li>
   <a href="w4e.html">Week 4 (extra)</a>
 </li>
+<li>
+  <a href="w5.html">Week 5</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -372,28 +375,28 @@ div.tocify {
 
 
 <hr />
-<div id="downloads" class="section level3">
-<h3><strong>Downloads</strong></h3>
-<div id="mirna-data" class="section level4">
-<h4>miRNA data</h4>
-<p><a href="https://www.dropbox.com/s/n80v2kfvvfo054l/miRNAdata.Rdata?dl=1">Click here to download the miRNA data</a></p>
+<div id="self-study" class="section level3">
+<h3>Self-Study</h3>
+<p>There is no self-study part for this week.</p>
 <hr />
-<p><br> <br></p>
 </div>
-</div>
-<div id="excercise-5" class="section level2">
-<h2>Excercise 5</h2>
-<p>For the last exercise we aim to generate the results from Excercise 4 in a R Markdown format</p>
+<div id="excercise-5" class="section level3">
+<h3>Excercise 5</h3>
+<p>For the exercise, you will need this dataset:</p>
+<ul>
+<li><a href="FIX%20ME!">mirnadata.rdata</a></li>
+</ul>
+<p>For the last exercise, the aim is to generate the results from Excercise 4 in an Rmarkdown format.</p>
 <ol style="list-style-type: decimal">
 <li><p>File -&gt; New File -&gt; R Markdown -&gt; choose HTML output and name it as Exercise5_YOURNAME.</p></li>
-<li><p>Perform the differential miRNA expression analysis as before and make the codes visible for your HTML file.</p></li>
-<li><p>Make a table of top 10 most significant miRNAs inclding (“Estimate”,“SE”,“t”,“P”)</p></li>
-<li><p>Create a boxplot of the top 2 miRNAs with jitters; low Braak is green and high Braak staging is Red. The boxplots layout should be in one row and two columns.</p></li>
-<li><p>Use function “get_multimir” in the package and extract the validated mRNA targets for the top two most significant miRNAs in association with AD pathology. (The input will both miRNAs at the same time!!) Please make the code visible.</p></li>
-<li><p>Print a table showing number of mRNA targets per miRNA.</p></li>
-<li><p>Use function enrichKEGG, enrichGO (for both MF and BP) and use the vector you generated from the target_entrez as an input. (Make the codes visible)</p></li>
+<li><p>Perform the differential miRNA expression analysis as before and make the R code visible in your HTML file.</p></li>
+<li><p>Make a table of the top 10 most significant miRNAs including (“Estimate”,“SE”,“t”,“P”).</p></li>
+<li><p>Create a boxplot of the top 2 miRNAs with jitter; low Braak is green and high Braak staging is Red. The boxplots layout should be in one row and two columns.</p></li>
+<li><p>Use function <code>get_multimir</code> from the <a href="https://www.bioconductor.org/packages/release/bioc/html/multiMiR.html">multiMiR</a> package and extract the validated mRNA targets for the top two most significant miRNAs in association with AD pathology (the input should be both miRNAs at the same time!). Please make the code visible.</p></li>
+<li><p>Print a table showing the number of mRNA targets per miRNA.</p></li>
+<li><p>Use function <code>enrichKEGG</code>, <code>enrichGO</code> (for both MF and BP) and use the vector you generated from the <code>target_entrez</code> as an input (make the code visible).</p></li>
 <li><p>Print the table of KEGG pathway analysis in your HTML output.</p></li>
-<li><p>Use dotplot function to plot the top 20 KEGG pathways and print it in your final output file.</p></li>
+<li><p>Use the <code>dotplot</code> function to plot the top 20 KEGG pathways and print it in your final output file.</p></li>
 </ol>
 </div>
 

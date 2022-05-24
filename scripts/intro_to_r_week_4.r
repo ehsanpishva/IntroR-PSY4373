@@ -589,6 +589,23 @@ curve(dchisq(x, df=1), lwd=3)
 
 load("mirnadata.rdata")
 
+# examine the first 10 rows and the first 5 columns
+dat[1:10,1:5]
+
+# Braak staging: https://en.wikipedia.org/wiki/Braak_staging
+
+# stages 0-2 are coded as Braak = 0
+# stages 5-6 are coded as Braak = 1
+# (and stages 3 and 4 are dropped from this dataset)
+# this variable indicates severity of Alzheimer's disease
+
+# the remaining variables are microRNA expression levels
+
+# microRNA: https://en.wikipedia.org/wiki/MicroRNA
+
+# the goal is to examine which microRNA is differentially expressed in the two
+# Braak groups
+
 # manually fit 490 simple regression models with 'Braak' as the predictor
 # variable and each of the other variables as outcome variables
 
