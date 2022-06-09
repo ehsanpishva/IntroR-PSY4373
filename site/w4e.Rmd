@@ -27,7 +27,7 @@ load("mirnadata.rdata")
 
 res <- matrix(data=NA, nrow=490, ncol=4)
 
-for (i in 2:491){
+for (i in 2:491) {
    fit <- lm(dat[,i] ~ Braak, data=dat)
    res[i-1,] <- coef(summary(fit))[2,]
 }
@@ -71,7 +71,7 @@ Then load the `clusterProfiler` package with:
 library(clusterProfiler)
 ```
 
-6. Use the `enrichKEGG` function from the `clusterProfiler` package and use the `targets` vector you generated above as input.
+6. Use the `enrichKEGG` function from the `clusterProfiler` package and use the `targets` vector you generated above as input. Put the results into an object called `kegg`. With `data.frame(kegg@result)`, you can extract the table of results from the KEGG pathway analysis.
 
 7. Write the table of the KEGG pathway analysis to a file (use the `write.table` function; see the week 1 extra part) and upload that together with your script.
 

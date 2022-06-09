@@ -404,7 +404,7 @@ div.tocify {
 </ul>
 <p>Create a new script file for this exercise and save it to the same directory/folder where you have saved the dataset to. Next, set the working directory to this directory/folder. Then you can import the dataset with:</p>
 <pre class="r"><code>dat &lt;- read.csv(&quot;inflammation.csv&quot;)</code></pre>
-<p>The dataset contains a <a href="https://en.wikipedia.org/wiki/Cytokine">cytokine</a> measurement for 40 consecutive days in 60 individuals.</p>
+<p>The dataset contains a <a href="https://en.wikipedia.org/wiki/Cytokine">cytokine</a> measurement for 40 consecutive days in 60 individuals (in essence, the measurements are indicators of inflamation).</p>
 <ol style="list-style-type: decimal">
 <li><p>Select from the data frame <code>dat</code>:</p>
 <ul>
@@ -415,17 +415,18 @@ div.tocify {
 </ul></li>
 <li><p>Calculate some summary statistics for specific individuals (rows) and days (columns).</p>
 <ul>
+<li><p>Calculate the mean inflammation score for the 10th day.</p></li>
 <li><p>Calculate the mean inflammation score for the first individual.</p></li>
 <li><p>Calculate the median inflammation score for the 5th day.</p></li>
-<li><p>Use <code>min()</code> and <code>max()</code> to calculate the range of values for the 10th individual.</p></li>
+<li><p>Use <code>min()</code> and <code>max()</code> to calculate the range of inflammation values for the 10th individual.</p></li>
 <li><p>Check you answer with the <code>range()</code> function.</p></li>
-<li><p>Use <code>quantile()</code> to calculate the <a href="https://en.wikipedia.org/wiki/Interquartile_range">interquartile range</a> of the 6th individual.</p></li>
+<li><p>Use <code>quantile()</code> to calculate the <a href="https://en.wikipedia.org/wiki/Interquartile_range">interquartile range</a> (IQR) of the 20th day.</p></li>
 </ul></li>
-<li><p>Let’s pretend there was something wrong with the instrument on the first five days for every second patient (2, 4, 6, etc.), which resulted in the measurements being twice as large as they should be.</p>
+<li><p>Let’s pretend there was something wrong with the instrument on the first five days for every second patient (2, 4, 6, etc.), which resulted in the measurements being halve as large as they should be.</p>
 <ul>
-<li><p>Write a vector containing each affected patient (hint: <code>help(seq)</code>).</p></li>
-<li><p>Create a new data frame in which you halve the first five days’ values in only those patients.</p></li>
-<li><p>Print out the corrected data frame to check that your code has fixed the problem.</p></li>
+<li><p>Create a vector containing the row numbers of the affected patients (hint: <code>help(seq)</code>) and save this to an object called <code>affected</code>.</p></li>
+<li><p>Using this vector, and selecting the correct columns, double the data for the first five days in only those patients.</p></li>
+<li><p>Print out the corrected data frame to check that the problem has been fixed.</p></li>
 </ul></li>
 </ol>
 <hr />

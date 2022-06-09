@@ -39,7 +39,7 @@ Create a new script file for this exercise and save it to the same directory/fol
 dat <- read.csv("inflammation.csv")
 ```
 
-The dataset contains a [cytokine](https://en.wikipedia.org/wiki/Cytokine) measurement for 40 consecutive days in 60 individuals.
+The dataset contains a [cytokine](https://en.wikipedia.org/wiki/Cytokine) measurement for 40 consecutive days in 60 individuals (in essence, the measurements are indicators of inflamation).
 
 1. Select from the data frame `dat`:
 
@@ -53,22 +53,24 @@ The dataset contains a [cytokine](https://en.wikipedia.org/wiki/Cytokine) measur
 
 2. Calculate some summary statistics for specific individuals (rows) and days (columns).
 
+    - Calculate the mean inflammation score for the 10th day.
+
     - Calculate the mean inflammation score for the first individual.
 
     - Calculate the median inflammation score for the 5th day.
 
-    - Use `min()` and `max()` to calculate the range of values for the 10th individual.
+    - Use `min()` and `max()` to calculate the range of inflammation values for the 10th individual.
 
     - Check you answer with the `range()` function.
 
-    - Use `quantile()` to calculate the [interquartile range](https://en.wikipedia.org/wiki/Interquartile_range) of the 6th individual.
+    - Use `quantile()` to calculate the [interquartile range](https://en.wikipedia.org/wiki/Interquartile_range) (IQR) of the 20th day.
 
-3. Let's pretend there was something wrong with the instrument on the first five days for every second patient (2, 4, 6, etc.), which resulted in the measurements being twice as large as they should be.
+3. Let's pretend there was something wrong with the instrument on the first five days for every second patient (2, 4, 6, etc.), which resulted in the measurements being halve as large as they should be.
 
-    - Write a vector containing each affected patient (hint: `help(seq)`).
+    - Create a vector containing the row numbers of the affected patients (hint: `help(seq)`) and save this to an object called `affected`.
 
-    - Create a new data frame in which you halve the first five days' values in only those patients.
+    - Using this vector, and selecting the correct columns, double the data for the first five days in only those patients.
 
-    - Print out the corrected data frame to check that your code has fixed the problem.
+    - Print out the corrected data frame to check that the problem has been fixed.
 
 ---

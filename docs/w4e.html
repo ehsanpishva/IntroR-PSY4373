@@ -394,7 +394,7 @@ div.tocify {
 
 res &lt;- matrix(data=NA, nrow=490, ncol=4)
 
-for (i in 2:491){
+for (i in 2:491) {
    fit &lt;- lm(dat[,i] ~ Braak, data=dat)
    res[i-1,] &lt;- coef(summary(fit))[2,]
 }
@@ -422,7 +422,7 @@ BiocManager::install(&quot;org.Hs.eg.db&quot;)</code></pre>
 <p>Then load the <code>clusterProfiler</code> package with:</p>
 <pre class="r"><code>library(clusterProfiler)</code></pre>
 <ol start="6" style="list-style-type: decimal">
-<li><p>Use the <code>enrichKEGG</code> function from the <code>clusterProfiler</code> package and use the <code>targets</code> vector you generated above as input.</p></li>
+<li><p>Use the <code>enrichKEGG</code> function from the <code>clusterProfiler</code> package and use the <code>targets</code> vector you generated above as input. Put the results into an object called <code>kegg</code>. With <code>data.frame(kegg@result)</code>, you can extract the table of results from the KEGG pathway analysis.</p></li>
 <li><p>Write the table of the KEGG pathway analysis to a file (use the <code>write.table</code> function; see the week 1 extra part) and upload that together with your script.</p></li>
 </ol>
 <hr />

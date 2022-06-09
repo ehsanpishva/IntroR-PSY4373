@@ -399,23 +399,26 @@ div.tocify {
 <p>In this exercise, we will continue to work with the dataset in <code>data_survey_edit.rdata</code>.</p>
 <p>Part A:</p>
 <ul>
-<li><p>Create a boxplot showing positive affect by marital status.</p></li>
-<li><p>Modify the x-axis text.</p></li>
-<li><p>Change the range of values in y axis.</p></li>
-<li><p>Modify the labels for x and y axes.</p></li>
-<li><p>Give different colors to each marital state.</p></li>
-<li><p>Add jitter to the boxplot (<a href="https://www.r-graph-gallery.com/96-boxplot-with-jitter.html" class="uri">https://www.r-graph-gallery.com/96-boxplot-with-jitter.html</a>).</p></li>
-<li><p>Add a legend and insert it at the top left (make sure it doesn’t overlay your plots).</p></li>
+<li><p>Create a boxplot showing negative affect by marital status.</p></li>
+<li><p>But this doesn’t look that great, so let’s do some modifications:</p>
+<ol style="list-style-type: decimal">
+<li>Do not show the supposed outliers (hint: check the <code>range</code> argument under <code>help(boxplot)</code>).</li>
+<li>Adjust the range of the y-axis so that it goes from 10 to 50 (the minimum and maximum possible values for the <code>negaff</code> scale).</li>
+<li>Make the boxplot horizontal and adjust the orientation of the axis labels. Note that you need to make the margin on the left larger so that the marital state labels fit.</li>
+<li>Create a nicer x-axis label and suppress the y-axis label.</li>
+<li>Use a different color for each marital state.</li>
+<li>Superimpose the actual data with some jitter on top of the boxplot with the <code>stripchart()</code> function.</li>
+</ol></li>
 </ul>
 <p>Part B:</p>
 <ul>
-<li><p>Make a scatterplot showing the association between the Rosenberg Self-Esteem Scale (total score) and negative affect.</p></li>
-<li><p>Change the range of values in y axis.</p></li>
-<li><p>Modify the labels for x and y axes.</p></li>
+<li><p>Create a scatterplot showing the association between the Rosenberg Self-Esteem Scale on the x-axis and negative affect on the y-axis.</p></li>
+<li><p>Use a filled circle as the plotting symbol and jitter the points slightly.</p></li>
+<li><p>Adjust the range of the x-axis and y-axis, so that they correspond to their possible range of values (check <code>data_survey.pdf</code>).</p></li>
+<li><p>Create nicer labels for x-axis and y-axis.</p></li>
 <li><p>Color label the points based on sex.</p></li>
-<li><p>Use different symbols for male and female.</p></li>
-<li><p>Add a correlation coefficient line to the scatter plot.</p></li>
-<li><p>Add a legend and insert it at the bottom left (make sure it doesn’t overlay your plots).</p></li>
+<li><p>Also use different symbols for male and female participants.</p></li>
+<li><p>Add a legend at the bottom left.</p></li>
 </ul>
 <hr />
 </div>

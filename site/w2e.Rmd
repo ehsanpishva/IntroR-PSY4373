@@ -31,35 +31,31 @@ In this exercise, we will continue to work with the dataset in `data_survey_edit
 
 Part A:
 
-  - Create a boxplot showing positive affect by marital status.
+  - Create a boxplot showing negative affect by marital status.
 
-  - Modify the x-axis text.
+  - But this doesn't look that great, so let's do some modifications:
 
-  - Change the range of values in y axis.
-
-  - Modify the labels for x and y axes.
-
-  - Give different colors to each marital state.
-
-  - Add jitter to the boxplot (https://www.r-graph-gallery.com/96-boxplot-with-jitter.html).
-
-  - Add a legend and insert it at the top left (make sure it doesn't overlay your plots).
+      1) Do not show the supposed outliers (hint: check the `range` argument under `help(boxplot)`).
+      2) Adjust the range of the y-axis so that it goes from 10 to 50 (the minimum and maximum possible values for the `negaff` scale).
+      3) Make the boxplot horizontal and adjust the orientation of the axis labels. Note that you need to make the margin on the left larger so that the marital state labels fit.
+      4) Create a nicer x-axis label and suppress the y-axis label.
+      5) Use a different color for each marital state.
+      6) Superimpose the actual data with some jitter on top of the boxplot with the `stripchart()` function.
 
 Part B:
 
-  - Make a scatterplot showing the association between the Rosenberg Self-Esteem Scale (total score) and negative affect.
+  - Create a scatterplot showing the association between the Rosenberg Self-Esteem Scale on the x-axis and negative affect on the y-axis.
 
-  - Change the range of values in y axis.
+  - Use a filled circle as the plotting symbol and jitter the points slightly.
 
-  - Modify the labels for x and y axes.
+  - Adjust the range of the x-axis and y-axis, so that they correspond to their possible range of values (check `data_survey.pdf`).
+
+  - Create nicer labels for x-axis and y-axis.
 
   - Color label the points based on sex.
 
-  - Use different symbols for male and female.
+  - Also use different symbols for male and female participants.
 
-  - Add a correlation coefficient line to the scatter plot.
-
-  - Add a legend and insert it at the bottom left (make sure it doesn't overlay your plots).
+  - Add a legend at the bottom left.
 
 ---
-

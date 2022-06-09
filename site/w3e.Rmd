@@ -30,26 +30,44 @@ In this exercise, we will continue to work with the dataset in `data_survey_edit
 
 Part A:
 
-  - Test whether the perceived stress level differs between the primary sources of stress.
+  - Create a boxplot for the total score on the Perceived Stress Scale (PSS) by the primary sources of stress.
 
-  - Test if the impact of the stress sources on stress level is dependent on sex.
+  - Which primary sources of stress appear to lead to comparatively higher levels of perceived stress?
 
-  - Create a boxplot illustrating the comparison tested in the previous question.
+  - Test whether the average total score on the PSS differs between the primary sources of stress using an ANOVA.
+
+  - Run a regression model to examine the same thing.
+
+  - Which primary source of stress level is the 'reference level' in the regression model?
+
+  - Test if the impact of the stress sources on the stress level is dependent on sex (i.e., whether there is an interaction) in a two-way ANOVA.
 
 Part B:
 
-  - Test the association between the Pearlin Mastery Scale and the perceived stress level.
+  - Test the correlation between the total score on the Perceived Stress Scale (PSS) and the total score on the Pearlin Mastery Scale ('mastery').
 
-  - Adjust the association tested in Q1 for age and sex and education.
+  - Run a regression model with PSS as the outcome and 'mastery' as predictor.
 
-  - Plot the association between the two variables and fit the regression coefficient line.
+  - Are the conclusions from these two methods of examining the association between these two variables consistent with each other?
 
-  - Use `plot()` for the result object obtained form the above association, place them in a 2x2 layout, and try to interpret the generated plots.
+  - Adjust the association tested in the regression model for age, sex, and the level of education of the participants.
 
-  - Test the correlation between sub-items of Pearlin Mastery Scale (`mastery1`, `mastery2`, ...) and report the regression coefficients and p values.
+  - Is the association between the PSS and mastery still significant?
 
-  - Create a scatterplot matrix of the sub-items tested in Q4.
+  - Create a scatterplot of 'mastery' (x-axis) versus 'pss' (y-axis).
+
+  - Based on the previous regression model, add a regression line to the plot showing the association between 'pss' and 'mastery' for a 40-year old female with an 'undergraduate degree'.
+
+Part C:
+
+  - Create a contingency table of primary source of stress versus sex.
+
+  - Test if there is an association between these two variables using a chi-square test.
+
+  - What percentage of males report that work is their primary source of stress? What about the females?
+
+  - Fit a logistic regression model predicting whether a participant is a male or not based on various variables in the dataset.
+
+  - Optional: Create an ROC curve based on your model and get the area under the curve (AUC). Based on the AUC, are you able to predict who the males in the dataset are accurately?
 
 ---
-
-

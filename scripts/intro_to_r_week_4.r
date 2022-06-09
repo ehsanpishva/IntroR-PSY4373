@@ -618,7 +618,7 @@ summary(lm(dat[,491] ~ Braak, data=dat))
 
 res <- matrix(data=NA, nrow=490, ncol=4)
 
-for (i in 2:491){
+for (i in 2:491) {
    fit <- lm(dat[,i] ~ Braak, data=dat)
    res[i-1,] <- coef(summary(fit))[2,]
 }
