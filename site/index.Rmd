@@ -40,7 +40,7 @@ In this course, we will cover:
 ### Links
 
 - [UM Page for PSY4373](https://curriculum.maastrichtuniversity.nl/meta/437595/introduction-r)
-- [Canvas Page for PSY4373](https://maastrichtuniversity.instructure.com/courses/9588)
+- [Canvas Page for PSY4373](https://maastrichtuniversity.instructure.com/courses/10474)
 - [R Project Website](https://www.r-project.org)
 - [Comprehensive R Archive Network](https://cran.r-project.org)
 - [RStudio Download](https://posit.co/download/rstudio-desktop/)
