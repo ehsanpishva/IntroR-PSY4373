@@ -20,7 +20,7 @@
 # - R works on data of all shapes and sizes
 # - R produces high-quality graphics
 # - R has a large user community
-# - not only is R free, but it is also open-source and cross-platform
+# - R is free and also open-source and cross-platform
 
 # Working with R
 
@@ -32,7 +32,7 @@
 # RStudio
 
 # - an 'integrated development environment' (IDE) for R
-# - freely available, open-source, cross-platform
+# - freely available, open-source, and cross-platform
 # - makes working wit R a lot more pleasant
 
 # Always Use Script Files
@@ -54,9 +54,9 @@
 # - top right:    Environment, Command History, Connections
 # - bottom right: File Browser, Plots, Packages, Help, Viewer
 
-# first check that it says "R version 4.1.3 (2022-03-10)" in the Console; if
-# not, you do not have the current version of R installed (maybe you should
-# update, especially if the version you have installed is quite old ...)
+# first check that it says "R version 4.3.0" in the Console; if not, you do
+# not have the current version of R installed (maybe you should update,
+# especially if the version you have installed is quite old ...)
 
 ############################################################################
 
@@ -83,18 +83,20 @@ x
 
 print(x)
 
-# note: object 'x' is listed under 'Environment' in RStudio
+# note: object 'x' is listed under 'Environment' in RStudio (top right pane)
 
 # the 'Environment' lists all objects in your 'workspace'; these can be simple
 # things like 'x', datasets, the results from some statistical analysis, etc.
 
 ############################################################################
 
-# check what objects are in the workspace (see also 'Environment' in RStudio)
+# check what objects are in the workspace
 
 x <- 1
 y <- 2
 z <- 55
+
+# list objects in the environment (see also 'Environment' in RStudio)
 
 ls()
 
@@ -117,7 +119,7 @@ ls()
 # the 'working directory' is the directory (i.e., folder) where R will look
 # for files (e.g., datasets you want to load) or where it will save files to
 # (e.g., graphs you want to save so that they can be imported into a paper or
-# presentation)
+# presentation; we will learn how to do this later on)
 
 # check your working directory
 
@@ -125,7 +127,7 @@ getwd()
 
 # if this is *not* the directory/folder where you put the course materials:
 #
-# Menu 'Session' - Set Working Directory - 'To Source File Location'
+# Menu 'Session' - 'Set Working Directory' - 'To Source File Location'
 #
 # this sets the working directory to the location of the script (note that
 # this actually runs the setwd() command with the correct location)
@@ -133,6 +135,13 @@ getwd()
 # check your working directory again
 
 getwd()
+
+# another approach: in the 'Files' tab in the bottom right pane, click your
+# way to the directory/folder with the materials, then click 'More' (or the gear
+# looking symbol), and select 'Set As Working Directory'
+
+# don't forget to save the script once in a while (Ctrl+s / Command+s) and add
+# comments to the script as needed
 
 ############################################################################
 
@@ -146,7 +155,7 @@ x <- 2.5
 
 x
 
-# can also use = but better use <-
+# can also use =
 
 x = 5
 x
@@ -177,12 +186,12 @@ x
 
 # quickly create a vector of consecutive numbers
 
-x <- c(20:100)
+x <- c(1:100)
 x
 
 # actually don't even need c() here
 
-x <- 20:100
+x <- 1:100
 x
 
 # note: if the vector is too long to fit into a single line, the output is
@@ -265,6 +274,11 @@ x
 age <- c(25, 21, 30)
 age
 
+age <- c("Bob"=25, "Sue"=21, "John"=30)
+age
+
+# can also simplify this
+
 age <- c(Bob=25, Sue=21, John=30)
 age
 
@@ -309,6 +323,9 @@ options(scipen=100)
 
 options(scipen=0)
 
+# note: changes to the options are not permanent (if you restart R/RStudio,
+# the default settings are in effect)
+
 ############################################################################
 
 # vectorized operations
@@ -332,10 +349,10 @@ mean(x)
 
 rm(list=ls())
 
-# or just restart the R session (Menu 'Session' - Restart R)
+# or just restart the R session (Menu 'Session' - 'Restart R')
 
 # most datasets are just a bunch of vectors (of the same length) combined into
-# a 'data frame'; let's create such an object manually
+# what is called a 'data frame'; let's create such an object manually
 
 id  <- c("Bob", "Sue", "John")
 age <- c(25, 21, 30)
@@ -346,7 +363,8 @@ dat <- data.frame(id, age, sex, grp)
 dat
 
 # notes:
-# - on the very left, we have the row names (not a variable!)
+# - on the very left, we have the row names (not a variable!); by default,
+#   they are just consecutive numbers, but don't have to be
 # - character variables are not shown with quotes
 
 # note: in the Environment pane, we now have a 'Data' object called 'dat'
@@ -445,7 +463,7 @@ dat.m
 dat.f
 
 # note: in R, we can have an unlimited number of objects (including data
-# frames) available at the same time (see Environment pane); this can get
+# frames) available at the same time (see the Environment pane); this can get
 # confusing quickly, so try to keep your workspace tidy (i.e., remove objects
 # you no longer need)
 
@@ -514,7 +532,7 @@ dat
 dat$y[dat$id == "John"] <- 8
 dat
 
-# this is a very straightforward way to make corrections to a dataset
+# this way you can make corrections to a dataset
 
 # rename a variable
 
@@ -561,6 +579,8 @@ dat$ymean <- NULL
 dat
 
 dat[c("y1","y2")]
+rowSums(dat[c("y1","y2")])
+rowMeans(dat[c("y1","y2")])
 
 dat$ysum  <- rowSums(dat[c("y1","y2")])
 dat$ymean <- rowMeans(dat[c("y1","y2")])
@@ -602,6 +622,22 @@ subset(dat, y1 >= 2)
 
 ############################################################################
 
+# quick summary of the bracket notation:
+#
+# say 'x' is a vector (could also be something like dat$x), then we can use []
+# to select one or multiple elements from that vector (e.g., x[2] or x[1:3])
+#
+# say 'dat' is a data frame, then we can use:
+# - dat[] to select one or more columns (e.g., dat[3] or dat["age"])
+# - dat[row(s),column(s)] to select one or more rows and one or more columns
+#   (e.g., dat[1:3,3] or dat[1:3,"age"])
+# - when leaving out row(s) or column(s), then this means to select all rows
+#   or columns (e.g., dat[1:3,] or dat[,"age"])
+#
+# often we use 'logicals' for selection/subsetting (e.g., dat[dat$age > 21,])
+
+############################################################################
+
 # a few other object types
 
 # matrices: similar to data frames (i.e., have rows and columns), but all
@@ -614,8 +650,8 @@ subset(dat, y1 >= 2)
 
 # example of a list with 4 components
 
-w <- list(name="Fred", mynumbers=c(1:10),
-          mycharacter=c("Male","Female","Female"), age=c(TRUE,FALSE))
+w <- list(name="Fred", age=24, grades=c(7,8,6,9,5,6),
+          address=c("14 Pine Ave, Nicetown", "104 South Street, Bad City"))
 w
 
 # note: data frames are really just a special case of lists, where each
@@ -629,7 +665,7 @@ gender <- factor(gender)
 gender
 
 # internally, factors are stored as integers that are mapped to the levels
-# (here: 1 = female, 2 = male)
+# (here: 1 = Female, 2 = Male)
 
 # R now treats gender as a nominal variable
 

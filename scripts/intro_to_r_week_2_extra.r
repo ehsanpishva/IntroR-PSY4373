@@ -1,6 +1,6 @@
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
 # read in data
 
@@ -119,31 +119,6 @@ dev.off()
 
 ############################################################################
 
-# bean plots
-
-# install (if necessary) the 'beanplot' package and load it
-
-if (!suppressWarnings(require(beanplot))) install.packages("beanplot")
-
-library(beanplot)
-
-# beanplot
-
-beanplot(pss ~ marital, data=dat, col="lightgray")
-
-par(mar=c(5,9,4,2))
-
-beanplot(pss ~ marital, data=dat, col=as.list(rainbow(8,alpha=0.2)),
-         what=c(1,1,1,0), horizontal=TRUE, las=1)
-
-stripchart(pss ~ marital, data=dat, las=1, method="stack", offset=0.05,
-           pch=19, cex=0.5, xlab="Perceived Stress Scale", add=TRUE,
-           col=rainbow(8))
-
-dev.off()
-
-############################################################################
-
 # beeswarm plots
 
 # install (if necessary) the 'beeswarm' package and load it
@@ -178,7 +153,7 @@ dev.off()
 # how to control what is shown on the x- and/or y-axis
 
 plot(NA, xlab="Stress", ylab="Positive Affect",
-     xlim=c(10,50), ylim=c(8,50), xaxt="n")
+     xlim=c(10,50), ylim=c(10,50), xaxt="n")
 
 # xaxt="n" means: do not add the axis tick marks and numbers
 # then we add the axis 'manually' (side=1 means: at the bottom)
@@ -188,7 +163,7 @@ axis(side=1, at=c(10,30,50))
 # you can also change what text is shown at the tick marks
 
 plot(NA, xlab="Stress", ylab="Positive Affect",
-     xlim=c(10,50), ylim=c(8,50), xaxt="n")
+     xlim=c(10,50), ylim=c(10,50), xaxt="n")
 
 axis(side=1, at=c(10,30,50), label=c("Low","Medium","High"))
 
@@ -197,9 +172,9 @@ axis(side=1, at=c(10,30,50), label=c("Low","Medium","High"))
 # change the type of box that is drawn around a plot
 
 plot(NA, xlab="Stress", ylab="Positive Affect",
-     xlim=c(10,50), ylim=c(8,50), bty="l")
+     xlim=c(10,50), ylim=c(10,50), bty="l")
 
 plot(NA, xlab="Stress", ylab="Positive Affect",
-     xlim=c(10,50), ylim=c(8,50), bty="n")
+     xlim=c(10,50), ylim=c(10,50), bty="n")
 
 ############################################################################

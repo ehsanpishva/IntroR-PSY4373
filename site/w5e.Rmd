@@ -14,26 +14,4 @@ There is no self-study part for this week.
 
 ### Excercise 5
 
-For the exercise, you will need this dataset:
-
-- [mirnadata.rdata](FIX ME!)
-
-For the last exercise, the aim is to generate the results from Excercise 4 in an Rmarkdown format.
-
-1. File -> New File -> R Markdown -> choose HTML output and name it as Exercise5_YOURNAME.
-
-2. Perform the differential miRNA expression analysis as before and make the R code visible in your HTML file.
-
-3. Make a table of the top 10 most significant miRNAs including ("Estimate","SE","t","P").
-
-4. Create a boxplot of the top 2 miRNAs with jitter; low Braak is green and high Braak staging is Red. The boxplots layout should be in one row and two columns.
-
-5. Use function `get_multimir` from the [multiMiR](https://www.bioconductor.org/packages/release/bioc/html/multiMiR.html) package and extract the validated mRNA targets for the top two most significant miRNAs in association with AD pathology (the input should be both miRNAs at the same time!). Please make the code visible.
-
-6. Print a table showing the number of mRNA targets per miRNA.
-
-6. Use function `enrichKEGG`, `enrichGO` (for both MF and BP) and use the vector you generated from the `target_entrez` as an input (make the code visible).
-
-7. Print the table of KEGG pathway analysis in your HTML output.
-
-8. Use the `dotplot` function to plot the top 20 KEGG pathways and print it in your final output file.
+For the exercise, you should submit the assignment you did for week 4 as an Rmarkdown (.Rmd) document. Do not just submit one large block of R code, but create a proper document with text and code interspersed as needed.

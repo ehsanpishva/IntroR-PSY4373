@@ -1,25 +1,23 @@
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
-# make sure the working directory is set to the directory/folder where the
-# script and the data are stored; if not, first set it 
+# make sure the working directory is set to the directory/folder where this
+# script and the data (data_survey.dat) are stored; if this is not the case,
+# first set the working directory correctly (see intro_to_r_week_1.r)
 
 # reading in a rectangular tab-delimited plain-text data file
 # - header=TRUE   : first row of the file gives the variable names
-# - sep="\t"      : tab is the separator
-# - as.is=TRUE    : don't convert strings to factors (the default now)
+# - sep="\t"      : tabs are used as the separator between variables
 # - na.strings="" : blank values are interpreted as NA
 
-dat <- read.table("data_survey.dat", header=TRUE,
-                  sep="\t", as.is=TRUE, na.strings="")
+dat <- read.table("data_survey.dat", header=TRUE, sep="\t", na.strings="")
 
 # note: as long as you don't get an error message, the data were read in
 
 # illustrate an error (note that object 'tmp' is not created)
 
-tmp <- read.table("data_survey.dat", header=TRUE,
-                  sep=" ", as.is=TRUE, na.strings="")
+tmp <- read.table("data_survey.dat", header=TRUE, sep=" ", na.strings="")
 
 # see data_survey.pdf for variable info / coding manual
 
@@ -105,7 +103,7 @@ help("mean")
 help(mean)
 ?mean
 
-# in RStudio, can put the cursor on command and hit F1
+# in RStudio, can put the cursor on a command and hit F1
 
 # the structure of help files:
 #
@@ -156,8 +154,7 @@ mean(na.rm=TRUE, dat$smokenum)
 mean(na.rm=TRUE, dat$smokenum, 0.05)
 
 # recommendation: don't rely on positional matching too much, as this can get
-# quite confusing (I usually don't name the very first argument, but otherwise
-# explicitly name the other arguments)
+# quite confusing
 
 # note: don't have to fully write out argument names (as long as this is
 # unambiguous); so the following also works fine
@@ -181,7 +178,8 @@ mean(dat$age > 30)
 mean(dat$age > 30) * 100
 round(mean(dat$age > 30) * 100, digits=1)
 
-# note: TRUE is treated as 1, FALSE is treated as 0
+# note: TRUE is treated as 1, FALSE is treated as 0; so, mean(dat$age > 30)
+# returns the proportion of subjects that are older than 30 years
 
 # number of missing values in a variable
 
@@ -192,7 +190,8 @@ table(is.na(dat$smokenum))
 
 table(dat$smokenum)
 
-# can show the number of missing values (if there are any or show always)
+# can show the number of missing values (if there are any missing values or
+# always show the number of missing values even if this is 0)
 
 table(dat$smokenum, useNA="ifany")
 table(dat$smokenum, useNA="always")
@@ -342,6 +341,8 @@ save(dat, file="data_survey_edit.rdata")
 # disadvantage:
 # - cannot import .rdata files into other software
 
+# note: some people prefer .rda as the file extension for R data files
+
 ############################################################################
 
 # remove 'dat' from workspace
@@ -354,8 +355,7 @@ ls()
 
 # load data using read.table()
 
-dat <- read.table("data_survey_edit.dat", header=TRUE,
-                  sep="\t", as.is=TRUE, na.strings="")
+dat <- read.table("data_survey_edit.dat", header=TRUE, sep="\t", na.strings="")
 
 ls()
 

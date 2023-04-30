@@ -18,6 +18,6 @@ The corresponding bibliography file:
 
 Note: If you need to generate such a reference file yourself, take a look at this [link](https://www.bioinformatics.org/texmed/). It uses NCBI identifiers and converts them to the BibTeX format.
 
-Instructions for exporting references from an Endnote library in the appropriate format for inclusion in an Rmarkdown document can be found [here](https://www.themillerlab.io/post/reference_management_in_rmarkdown/).
+Instructions for exporting references from an Endnote library in the appropriate format for inclusion in an Rmarkdown document can be found [here](https://libguides.utsa.edu/c.php?g=522165&p=7949194).
 
 ---

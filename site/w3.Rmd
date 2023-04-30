@@ -14,7 +14,6 @@ Week 3 is all about various types of statistical tests / models. We will examine
 - two-way ANOVAs
 - correlations
 - linear regression models
-- regression with a transformed outcome variable
 - polynomial regression models
 - categorical predictors in regression models
 - ANCOVAs

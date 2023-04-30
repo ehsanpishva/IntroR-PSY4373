@@ -1,6 +1,6 @@
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
 # show installed packages
 
@@ -64,13 +64,17 @@ dat <- read.table(header=TRUE, colClasses=c("character", "integer", "Date"), tex
 3.6.3 15537 2020-04-01
 4.0.2 16261 2020-09-15
 4.1.2 18544 2021-12-06
-4.1.3 18977 2022-03-14")
+4.1.3 18977 2022-03-14
+4.2.0 18579 2022-05-27
+4.2.2 19003 2023-01-12
+4.2.3 19300 2023-03-19")
 
 par(mar=c(6,5.5,4,2))
 par(mgp=c(4,1,0))
-plot(dat$date, dat$count, pch=19, cex=1.2, xlab="", ylab="Number of CRAN Packages", xaxt="n", yaxt="n")
+plot(dat$date, dat$count, pch=19, cex=1.2, xlab="", ylab="Number of CRAN Packages",
+     xaxt="n", yaxt="n", ylim=c(0,20000))
 axis(side=1, at=dat$date, label=dat$date, las=2, cex.axis=.7)
-axis(side=2, at=seq(0,19000,1000), las=2)
+axis(side=2, at=seq(0,20000,1000), las=2)
 axis(side=3, at=dat$date, label=dat$vers, las=2, cex.axis=.7)
 grid(nx=10, ny=10)
 
@@ -95,6 +99,10 @@ install.packages("lme4")
 
 library(lme4)
 
+# if you put install.packages("pkg") into your script, this will reinstall the
+# package every time you rerun the script; to avoid this, you could put a # in
+# front of the install.packages("pkg") so that it turns into a comment
+
 # terminology:
 # - package = book
 # - library = place where you store books
@@ -104,7 +112,7 @@ library(lme4)
 # while to complete in case you already have many packages installed and many
 # of them can be updated
 
-# updating packages
+# updating packages (will get prompt for each package that can be updated)
 
 update.packages()
 
@@ -193,7 +201,8 @@ pkg_search_addin("structural equation")
 # - has a 'vignette' or other supporting documentation
 # - paper/book about package has been published
 # - help files are comprehensive and free of errors
-# - has been cited in papers
+# - has been cited in papers / recommended by peers
+# - number of downloads
 # - ...
 
 # Journal of Statistical Software: https://www.jstatsoft.org
@@ -215,8 +224,10 @@ citation("lme4")
 # - StackExchange: https://stackexchange.com
 #   - https://stackoverflow.com
 #   - https://stats.stackexchange.com
-# - https://community.rstudio.com (for questions related to RStudio and
-#   packages that have been written by RStudio staff, esp. tidyverse stuff)
+# - https://community.rstudio.com (for questions related to RStudio, packages
+#   that have been written by RStudio/Posit staff, and esp. tidyverse stuff)
+# - R User Group at Maastricht University (RUG@UM):
+#   https://wviechtb.github.io/r-user-group/
 
 ############################################################################
 
@@ -254,14 +265,14 @@ dat <- structure(...)
 dat <- structure(list(vers = c("1.3", "1.4", "1.5", "1.7", "1.8", "1.9",
 "2.0", "2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "2.10",
 "2.13", "2.15", "3.0.2", "3.1", "3.2", "3.2.2", "3.2.3", "3.3.1", "3.3.2",
-"3.4.3", "3.6.3", "4.0.2", "4.1.2", "4.1.3"), count = c(110L, 129L, 161L,
-219L, 273L, 357L, 406L, 548L, 647L, 739L, 911L, 1000L, 1300L, 1495L, 1614L,
-1907L, 2008L, 3000L, 3976L, 5000L, 5745L, 6706L, 7547L, 7969L, 9004L, 9961L,
-11991L, 15537L, 16261L, 18544L, 18977L), date = structure(c(11494, 11673,
-11850, 12197, 12372, 12574, 12703, 12952, 13133, 13299, 13494, 13615, 13833,
-13956, 14172, 14351, 14543, 15106, 15604, 16017, 16304, 16593, 16776, 16861,
-17035, 17194, 17515, 18353, 18520, 18967, 19065), class = "Date")), class =
-"data.frame", row.names = c(NA, -31L))
+"3.4.3", "3.6.3", "4.0.2", "4.1.2", "4.1.3", "4.2.0"), count = c(110L, 129L,
+161L, 219L, 273L, 357L, 406L, 548L, 647L, 739L, 911L, 1000L, 1300L, 1495L,
+1614L, 1907L, 2008L, 3000L, 3976L, 5000L, 5745L, 6706L, 7547L, 7969L, 9004L,
+9961L, 11991L, 15537L, 16261L, 18544L, 18977L, 18579L), date =
+structure(c(11494, 11673, 11850, 12197, 12372, 12574, 12703, 12952, 13133,
+13299, 13494, 13615, 13833, 13956, 14172, 14351, 14543, 15106, 15604, 16017,
+16304, 16593, 16776, 16861, 17035, 17194, 17515, 18353, 18520, 18967, 19065,
+19139), class = "Date")), class = "data.frame", row.names = c(NA, -32L))
 
 plot(dat$date, dat$count, xlab="", ylab="Number of CRAN Packages")
 
@@ -299,7 +310,7 @@ dput(dat[1:10,])
 
 # not all packages are on CRAN
 
-# for example Bioconductor: https://www.bioconductor.org/
+# for example Bioconductor: https://www.bioconductor.org
 
 ############################################################################
 
@@ -415,58 +426,6 @@ points(dat$age, dat$circumference, pch=19)
 
 ############################################################################
 
-# another example
-
-rm(list=ls())
-
-load("data_survey_edit.rdata")
-
-res <- aov(pss ~ marital, data=dat)
-res
-summary(res)
-
-# visualize densities of the 8 groups
-
-umarital <- unique(dat$marital)
-cols <- rainbow(8, alpha=0.2)
-
-par(mar=c(5,9,4,2))
-plot(NA, xlim=c(0, 50), ylim=c(0.8, 8.8), xlab="Perceived Stress Scale Value", ylab="",
-     main="Kernel Density Estimates of Stress by Marital Status", yaxt="n", bty="n")
-axis(side=2, at=1:8, labels=umarital, las=1, tick=FALSE)
-
-for (i in 1:8) {
-
-   abline(h = i, col="lightgray")
-   res <- density(dat$pss[dat$marital == umarital[i]], na.rm = TRUE)
-   res$y <- res$y / max(res$y) * 0.8
-   lines(res$x, res$y + i)
-   polygon(res$x, res$y + i, col=cols[i])
-   text(52, i+.15, paste("n =", length(dat$pss[dat$marital == umarital[i]])), pos=2, cex=0.8)
-
-}
-
-# this is sometimes called a 'ridgeline plot'
-
-dev.off()
-
-############################################################################
-
-# digression: can also create such plots with ggplot2 + ggridges
-
-if (!suppressWarnings(require(ggplot2))) install.packages("ggplot2")
-if (!suppressWarnings(require(ggridges))) install.packages("ggridges")
-
-library(ggplot2)
-library(ggridges)
-
-ggplot(dat, aes(x = pss, y = marital, fill = marital)) +
-   geom_density_ridges() +
-   theme_ridges() +
-   theme(legend.position = "none")
-
-############################################################################
-
 # if-else statements (a very simple example)
 
 x <- 3
@@ -476,34 +435,6 @@ if (x > 5) {
 } else {
    print("x is not bigger than 5.")
 }
-
-############################################################################
-
-# using if() to set options in scripts
-
-dat <- Orange
-
-plot.type <- "bw" # options: "bw", "grayscale", "color"
-
-plot(dat$age, dat$circumference, pch=19, xlab="Days", ylab="Trunk Circumference (mm)")
-
-if (plot.type == "bw") {
-   cols <- rep("black", 5)
-}
-
-if (plot.type == "grayscale") {
-   cols <- c("gray20", "gray50", "gray60", "gray80", "gray90")
-}
-
-if (plot.type == "color") {
-   cols <- c("blue", "red", "green", "darkgray", "violet")
-}
-
-for (i in 1:5) {
-   lines(dat$age[dat$Tree==i], dat$circumference[dat$Tree==i], col=cols[i], lwd=2)
-}
-
-points(dat$age, dat$circumference, pch=19)
 
 ############################################################################
 
@@ -557,33 +488,6 @@ mean(sig.pvals)
 # use the 'equation approach' to determine the power of the t-test in this scenario
 
 power.t.test(n=20, delta=0.5, sd=1)
-
-############################################################################
-
-# while() function
-
-iters <- 10000
-pvals <- rep(NA, iters)
-
-i <- 1
-
-while (i <= iters) {
-
-   x1 <- rchisq(20, df=1)
-   x2 <- rchisq(20, df=1)
-   res <- t.test(x1, x2)
-   pvals[i] <- res$p.value
-
-   i <- i + 1
-
-}
-
-sig.pvals <- ifelse(pvals <= .05, 1, 0)
-mean(sig.pvals)
-
-# plot density of a chi-square distributed variable with df=1
-
-curve(dchisq(x, df=1), lwd=3)
 
 ############################################################################
 

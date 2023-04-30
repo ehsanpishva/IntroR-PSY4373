@@ -42,35 +42,20 @@ dat <- read.csv("inflammation.csv")
 The dataset contains a [cytokine](https://en.wikipedia.org/wiki/Cytokine) measurement for 40 consecutive days in 60 individuals (in essence, the measurements are indicators of inflamation).
 
 1. Select from the data frame `dat`:
-
     - The element on the 4th row and 2nd column.
-
     - The element on the 7th row and 5th column.
-
     - The 10th row.
-
     - The 3rd column.
-
 2. Calculate some summary statistics for specific individuals (rows) and days (columns).
-
     - Calculate the mean inflammation score for the 10th day.
-
     - Calculate the mean inflammation score for the first individual.
-
     - Calculate the median inflammation score for the 5th day.
-
     - Use `min()` and `max()` to calculate the range of inflammation values for the 10th individual.
-
     - Check you answer with the `range()` function.
-
     - Use `quantile()` to calculate the [interquartile range](https://en.wikipedia.org/wiki/Interquartile_range) (IQR) of the 20th day.
-
 3. Let's pretend there was something wrong with the instrument on the first five days for every second patient (2, 4, 6, etc.), which resulted in the measurements being halve as large as they should be.
-
     - Create a vector containing the row numbers of the affected patients (hint: `help(seq)`) and save this to an object called `affected`.
-
     - Using this vector, and selecting the correct columns, double the data for the first five days in only those patients.
-
     - Print out the corrected data frame to check that the problem has been fixed.
 
 ---

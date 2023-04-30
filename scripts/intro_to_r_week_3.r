@@ -1,6 +1,6 @@
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
 # read in data
 
@@ -43,37 +43,24 @@ res <- aov(pss ~ marital, data=dat)
 res
 summary(res)
 
+# the F-test is a test of the null hypothesis that the true PSS means of the 8
+# different marital status groups are identical (which we reject here, p < .01)
+
 # difference between means for all pairs of levels
 # https://en.wikipedia.org/wiki/Tukey's_range_test
 
 sav <- TukeyHSD(res)
 sav
 
+# provides tests of the difference between each pair of levels of the grouping
+# variable (adjusted for multiple testing)
+
 # CIs for the difference in mean levels
 
 par(mar=c(5,16,4,2))
 plot(sav, las=1)
 
-############################################################################
-
-# digression: testing all pairwise differences using Bonferroni correction
-
-if (!suppressWarnings(require(multcomp))) install.packages("multcomp")
-
-library(multcomp)
-
-# turn 'marital' into a factor variable
-
-dat$fmarital <- factor(dat$marital)
-
-# fit model
-
-res <- aov(pss ~ fmarital, data=dat)
-summary(res)
-
-# all pairwise comparisons using Bonferrroni correction
-
-summary(glht(res, linfct = mcp(fmarital = "Tukey")), test = adjusted("bonferroni"))
+dev.off()
 
 ############################################################################
 
@@ -122,7 +109,7 @@ summary(res)
 # within-subject factors) with the aov() function, but we won't cover this
 #
 # some examples can be found here:
-# https://stats.idre.ucla.edu/r/seminars/repeated-measures-analysis-with-r
+# https://stats.oarc.ucla.edu/r/seminars/repeated-measures-analysis-with-r/
 #
 # see also the ezANOVA() function from the 'ez' package that might be easier
 # to use for complex ANOVA models (https://cran.r-project.org/package=ez)
@@ -136,34 +123,9 @@ summary(res)
 
 cor(dat$posaff, dat$negaff)
 
-# correlation matrix for multiple variables
-
-cor(dat$posaff, dat$negaff, dat$pss)
-
-# the above does not work
-
-cor(dat[c("posaff", "negaff", "pss")])
-
-cor(dat[,c("posaff", "negaff", "pss")], use = "complete.obs")
-
-round(cor(dat[,c("posaff", "negaff", "pss")], use = "complete.obs"), digits = 2)
-
-# scatterplot for two variables
-
-plot(dat$posaff, dat$negaff)
-
 # correlation testing
 
 cor.test(dat$posaff, dat$negaff)
-
-# scatterplot matrix
-
-pairs(dat[c("posaff", "negaff", "pss", "rses")])
-
-pairs(dat[c("posaff", "negaff", "pss", "rses")], pch=19, cex=.1)
-
-pairs(dat[c("posaff", "negaff", "pss", "rses")], pch=19, cex=.1,
-      col=ifelse(dat$sex == "male", "blue", "red"))
 
 # Spearman correlation
 # https://en.wikipedia.org/wiki/Spearman's_rank_correlation_coefficient
@@ -187,27 +149,29 @@ plot(pss ~ age, data=dat, pch=19)
 
 res <- lm(pss ~ age, data=dat)
 res
-
 summary(res)
 
 # add regression line to the plot above (lwd is for the line width)
 
 abline(res, lwd=3, col="red")
 
-# fitted values, residuals, standarized residuals
+# fitted values, residuals, standardized residuals
 
 fitted(res)
 residuals(res)
 rstandard(res)
 
-# fitted values versus residuals plot
+# fitted values versus standardized residuals plot
 
-plot(fitted(res), residuals(res), pch=19,
+plot(fitted(res), rstandard(res), pch=19,
      xlab="Fitted Values", ylab="Residuals")
-
 abline(h=0)
 
-# normal Q-Q plot of standardized residuals
+# histogram of the standardized residuals
+
+hist(rstandard(res))
+
+# normal Q-Q plot of the standardized residuals
 # https://en.wikipedia.org/wiki/Q-Q_plot
 
 qqnorm(rstandard(res), pch=19)
@@ -232,25 +196,11 @@ points(pss ~ age, data=dat, subset=c(68,77), col="red", pch=19, cex=2)
 tmp <- lm(pss ~ age, data=dat, subset=-c(68,77))
 summary(tmp)
 
-# install (if necessary) and load the 'car' package
-
-if (!suppressWarnings(require(car))) install.packages("car")
-
-library(car)
-
-# a nicer Q-Q plot
-
-qqPlot(res, pch=19, cex=0.5, reps=5000)
-
-plot(pss ~ age, data=dat, pch=19)
-abline(res, lwd=3)
-points(pss ~ age, data=dat, subset=c(10,19), col="red", pch=19, cex=2)
-
 # just to illustrate an extreme case
 
 tmp <- dat
-tmp$age[1] <- 80
-tmp$pss[1] <- 45
+tmp$age[235] <- 80
+tmp$pss[235] <- 45
 
 plot(pss ~ age, data=tmp, pch=19)
 res <- lm(pss ~ age, data=tmp)
@@ -261,6 +211,12 @@ plot(cooks.distance(res), pch=19, type="o", ylab="Cook's Distance")
 ############################################################################
 
 # digression: Type III tests with the 'car' package
+
+# install (if necessary) and load the 'car' package
+
+if (!suppressWarnings(require(car))) install.packages("car")
+
+library(car)
 
 res <- aov(pss ~ sex + marital, data=dat)
 
@@ -356,65 +312,6 @@ lines(newdat$age, pred$upr, lty="dotted", col="blue")
 
 ############################################################################
 
-# transformation of the outcome variable
-
-res <- lm(negaff ~ age, data=dat)
-summary(res)
-
-# fitted values versus residuals plot
-
-plot(fitted(res), residuals(res), pch=19,
-     xlab="Fitted Values", ylab="Residuals")
-abline(h=0)
-
-plot(jitter(fitted(res), amount=0.5), jitter(residuals(res), amount=2),
-     pch=19, xlab="Fitted Values", ylab="Residuals")
-abline(h=0)
-
-# normal Q-Q plot of standardized residuals
-
-qqnorm(rstandard(res), pch=19)
-qqline(rstandard(res))
-
-# histogram of the outcome variable
-
-hist(dat$negaff)
-
-# histogram of the standardized residuals
-
-hist(rstandard(res))
-
-# histogram of the log-transformed outcome variable
-
-hist(log(dat$negaff))
-
-# fit model with log-transformed outcome
-
-res <- lm(log(negaff) ~ age, data=dat)
-summary(res)
-
-# histogram and normal Q-Q plot of standardized residuals
-
-hist(rstandard(res))
-
-qqnorm(rstandard(res), pch=19)
-qqline(rstandard(res))
-
-# plot data and model fit
-
-plot(log(negaff) ~ age, data=dat, pch=19)
-
-newdat <- data.frame(age = 10:90)
-pred <- predict(res, newdata=newdat)
-lines(newdat$age, pred, lwd=3, col="red")
-
-# back-transform the outcome and predicted values
-
-plot(negaff ~ age, data=dat, pch=19)
-lines(newdat$age, exp(pred), lwd=3, col="red")
-
-############################################################################
-
 # polynomial regression
 # https://en.wikipedia.org/wiki/Polynomial_regression
 
@@ -488,7 +385,17 @@ dat$marital
 
 factor(dat$marital)
 
-# and we can 'relevel' a factor to choose the reference level
+# the first level is the 'reference' level (in this case 'divorced'); the
+# intercept corresponds to the mean PSS value of this reference group
+
+mean(dat$pss[dat$marital == "divorced"])
+
+# the coefficients for the other groups are the *difference* between the means
+# of these groups and the mean of the reference group
+
+mean(dat$pss[dat$marital == "separated"]) - mean(dat$pss[dat$marital == "divorced"])
+
+# we can 'relevel' a factor to choose the reference level
 
 relevel(factor(dat$marital), ref="single")
 
@@ -505,7 +412,7 @@ summary(res)
 
 ############################################################################
 
-# numerical and categorical predictors in the same model
+# categorical and numerical predictors in the same model
 
 res <- lm(pss ~ sex + negaff, data=dat)
 summary(res)
@@ -579,28 +486,8 @@ res <- loess(pss ~ negaff, data=dat, span=0.4)
 pred <- predict(res, newdata=newdat)
 lines(newdat$negaff, pred, col="green", lwd=3)
 
-# Friedman's 'super smoother' ('bass' controls the degree of smoothing)
-
-res <- supsmu(dat$negaff, dat$pss, bass=5)
-res
-
-lines(res$x, res$y, col="orange", lwd=3)
-
-legend("bottomright", inset=.02, col=c("red","blue","green","orange"),
-       legend=c("2nd Degree Polynomial","Smoother (span = 0.75)","Smoother (span = 0.40)","Super Smoother"),
+legend("bottomright", inset=.02, col=c("red","blue","green"),
+       legend=c("2nd Degree Polynomial","Smoother (span = 0.75)","Smoother (span = 0.40)"),
        lty="solid", lwd=3, cex=0.8)
-
-############################################################################
-
-# add an approximate 95% CI to the loess smoother
-
-plot(jitter(dat$negaff, amount=.5), jitter(dat$pss, amount=.5), pch=19,
-     xlab="Negative Affect", ylab="Perceived Stress", cex=0.5)
-res <- loess(pss ~ negaff, data=dat)
-newdat <- data.frame(negaff = 0:50)
-pred <- predict(res, newdata=newdat, se=TRUE)
-lines(newdat$negaff, pred$fit, col="blue", lwd=3)
-lines(newdat$negaff, pred$fit-1.96*pred$se, col="blue", lwd=3, lty="dotted")
-lines(newdat$negaff, pred$fit+1.96*pred$se, col="blue", lwd=3, lty="dotted")
 
 ############################################################################

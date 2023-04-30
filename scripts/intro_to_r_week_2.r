@@ -1,6 +1,6 @@
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
 # read in data
 
@@ -22,7 +22,7 @@ barplot(table(dat$marital))
 #
 # Error in plot.new() : figure margins too large
 #
-# this indicates that the size of the 'plotting device' is too small to
+# then this indicates that the size of the 'plotting device' is too small to
 # accommodate the plot you are trying to create; this can happen more easily
 # in RStudio because the pane for plots at the bottom right is a bit small; if
 # this happen, you just have to make the size of the plotting pane larger
@@ -41,12 +41,12 @@ par()$mar
 
 # make the bottom margin larger (and reduce the top margin)
 
-par(mar=c(9,4,4,2))
+par(mar=c(9,4,2,2))
 barplot(table(dat$marital), las=2)
 
 # horizontal bars
 
-par(mar=c(4,9,4,2))
+par(mar=c(4,9,2,2))
 barplot(table(dat$marital), horiz=TRUE, las=1)
 
 # las=1 to make the axis labels horizontal
@@ -177,10 +177,6 @@ lines(density(dat$age, adjust=1.5), lwd=3)
 
 plot(dat$pss, dat$posaff)
 
-# note: if you get an error ("need finite 'xlim' values" or "'x' and 'y'
-# lengths differ") then your dataset probably does not include the 'pss'
-# and/or the 'posaff' variable we created earlier
-
 # adjust some settings
 
 plot(dat$pss, dat$posaff, xlab="Stress", ylab="Positive Affect",
@@ -209,9 +205,10 @@ plot(dat$pss, dat$posaff, xlab="Stress", ylab="Positive Affect",
 legend("topright", inset=.02, pch=c(19,19), cex=0.8,
        col=c("red","blue"), legend=c("smoker","non-smoker"))
 
-# if x and y values are measured coarsely, may get overlapping points, which
-# can make it more difficult to see any trends/patterns; one solution is to
-# indicate the number of overlapping points at a location via the point sizes
+# if the x and y values are measured coarsely (e.g., as integer), we may get
+# overlapping points, which can make it difficult to see any trends/patterns;
+# one solution is to indicate the number of overlapping points at a location
+# via the point sizes
 
 # binning of x-y values
 
@@ -251,7 +248,7 @@ plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
 # note: the jittering is random, so each time you rerun the command above, the
 # plot will look (slightly) different; to make the look of the plot fully
 # reproducible, we can set the 'seed' of the random number generator before
-# creating the plot (the seed number is arbitrary)
+# creating the plot (the seed number is arbitrary; use your favorite number!)
 
 set.seed(1234)
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
@@ -304,20 +301,16 @@ plot(dat$pss, dat$posaff, xlab="Stress", ylab="PA", pch=19, col=rgb(0,0,0,.2))
 
 # saving a plot (in various formats) (saved to current working directory)
 
-# with pdf(), we open a pdf plotting device; then we create the plot, then
+# with pdf(), we open the pdf plotting device; then we create the plot, then
 # with dev.off() we close the plotting device (don't forget this last step!)
 
 pdf("plot_stress_vs_posaff.pdf")
+set.seed(1234)
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
      pch=19, xlab="Stress", ylab="Positive Affect")
 dev.off()
 
 # same procedure with other plotting devices
-
-postscript("plot_stress_vs_posaff.eps")
-plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
-     pch=19, xlab="Stress", ylab="Positive Affect")
-dev.off()
 
 png("plot_stress_vs_posaff.png")
 plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
@@ -342,7 +335,7 @@ plot(jitter(dat$pss, amount=0.5), jitter(dat$posaff, amount=0.5),
      pch=19, xlab="Stress", ylab="Positive Affect")
 dev.off()
 
-# to get more info on the 'graphical devices' available
+# to get more info on the main 'graphical devices' available
 
 help(device)
 
@@ -369,7 +362,7 @@ res <- kde2d(dat$pss, dat$posaff)
 tmp <- dat[c("pss","posaff")]
 tmp <- na.omit(tmp)
 
-res <- kde2d(tmp$pss, tmp$posaff, n=100)
+res <- kde2d(tmp$pss, tmp$posaff)
 res
 
 # contour plots
@@ -394,24 +387,6 @@ filled.contour(res, color=cm.colors, xlab="Stress", ylab="PA")
 filled.contour(res, color=hcl.colors, xlab="Stress", ylab="PA")
 
 # check if filled.contour() has a 'color' argument; what is going on here?
-
-# install (if necessary) the 'viridis' package and load it
-
-if (!suppressWarnings(require(viridis))) install.packages("viridis")
-
-library(viridis)
-
-# now we have even more color palettes
-
-filled.contour(res, color=viridis, xlab="Stress", ylab="PA")
-filled.contour(res, color=magma,   xlab="Stress", ylab="PA")
-filled.contour(res, color=inferno, xlab="Stress", ylab="PA")
-filled.contour(res, color=plasma,  xlab="Stress", ylab="PA")
-filled.contour(res, color=cividis, xlab="Stress", ylab="PA")
-
-# show help for viridis color palettes
-
-help(viridis)
 
 # a 3d perspective plot
 
@@ -462,8 +437,8 @@ par(mfrow=c(2,2))
 par(mar=c(5,5,5,2))
 hist(dat$age, xlab="Age", main="(a) Histogram of Age", xlim=c(0,100), ylim=c(0,100))
 
-par(mar=c(9,4,5,2))
-barplot(table(dat$marital), las=2, main="(b) Marital Status")
+par(mar=c(4,9,4,2))
+barplot(table(dat$marital), horiz=TRUE, las=1, xlab="Frequency", main="(b) Marital Status")
 
 par(mar=c(5,5,5,2))
 set.seed(1234)
@@ -487,8 +462,8 @@ layout.show(3)
 
 hist(dat$age, xlab="Age", main="(a) Histogram of Age", xlim=c(0,100), ylim=c(0,100))
 
-par(mar=c(9,4,5,1))
-barplot(table(dat$marital), las=2, main="(b) Marital Status")
+par(mar=c(4,9,4,2))
+barplot(table(dat$marital), horiz=TRUE, las=1, xlab="Frequency", main="(b) Marital Status")
 
 par(mar=c(5,5,5,2))
 boxplot(dat$age, ylab="Age", main="Boxplot of Age")
@@ -509,7 +484,7 @@ dev.off()
 dat.m <- dat[dat$sex == "male",]
 dat.f <- dat[dat$sex == "female",]
 
-#png("stress_pa_association.png", width=2000, height=1900, res=300)
+#png("plot_stress_pa_association.png", width=2000, height=1900, res=300)
 
 # set up an empty plot but with labeled axes and axis limits set
 
@@ -532,7 +507,8 @@ title("Stress versus Positive Affect")
 
 # add legend
 
-legend("topright", inset=.02, pch=c(19,19), legend=c("male","female"), col=c("#1fc3aa","#8624f5"))
+legend("topright", inset=.02, pch=c(19,19), legend=c("male","female"),
+       col=c("#1fc3aa","#8624f5"), cex=0.8)
 
 # add an arbitrary (curved) line (just for illustration purposes)
 
@@ -547,5 +523,40 @@ text(10,  8, "Flat Affect?!?",  pos=4, font=2)
 text(50,  8, "Academics ...",   pos=2, font=2)
 
 #dev.off()
+
+############################################################################
+
+# some notes:
+#
+# las: to adjust the orientation of the axis labels (las=1 to make them
+#      horizontal, las=2 to make them perpendicular)
+# pch: plotting symbol (pch=19 for filled circles; see help(points) for options)
+# cex: to adjust the point/text size in plots (the default is 1)
+# col: to adjust the color of what is plotted
+#
+# xlab: to set the x-axis label
+# ylab: to set the y-axis label
+# main: to set the plot title
+# xlim: to set the x-axis limits
+# ylim: to set the y-axis limits
+#
+# par(mar=c(bottom,left,top,right)) to adjust the size of the plot margins;
+# the default values are par(mar=c(5.1,4.1,4.1,2.1)), so just change the
+# appropriate number to increase/decrease the size of the corresponding margin
+#
+# par(mfrow=c(2,2)) to split the plotting device into two rows and two columns
+#
+# barplot()       for a barplot
+# hist()          for a histogram
+# boxplot()       for a boxplot
+# plot(density()) for a plot of a kernel density estimate
+# plot(x,y)       for a scatterplot of variable x versus y
+#
+# legend()        to add a legend to a plot
+# title()         to add a title to a plot
+# abline()        to add horizontal/vertical lines to a plot
+# points()        to add points to a plot
+# lines()         to add lines to a plot
+# text()          to add text to a plot
 
 ############################################################################

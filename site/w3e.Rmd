@@ -31,43 +31,28 @@ In this exercise, we will continue to work with the dataset in `data_survey_edit
 Part A:
 
   - Create a boxplot for the total score on the Perceived Stress Scale (PSS) by the primary sources of stress.
-
   - Which primary sources of stress appear to lead to comparatively higher levels of perceived stress?
-
   - Test whether the average total score on the PSS differs between the primary sources of stress using an ANOVA.
-
   - Run a regression model to examine the same thing.
-
   - Which primary source of stress level is the 'reference level' in the regression model?
-
   - Test if the impact of the stress sources on the stress level is dependent on sex (i.e., whether there is an interaction) in a two-way ANOVA.
 
 Part B:
 
   - Test the correlation between the total score on the Perceived Stress Scale (PSS) and the total score on the Pearlin Mastery Scale ('mastery').
-
   - Run a regression model with PSS as the outcome and 'mastery' as predictor.
-
   - Are the conclusions from these two methods of examining the association between these two variables consistent with each other?
-
   - Adjust the association tested in the regression model for age, sex, and the level of education of the participants.
-
   - Is the association between the PSS and mastery still significant?
-
   - Create a scatterplot of 'mastery' (x-axis) versus 'pss' (y-axis).
-
   - Based on the previous regression model, add a regression line to the plot showing the association between 'pss' and 'mastery' for a 40-year old female with an 'undergraduate degree'.
 
 Part C:
 
   - Create a contingency table of primary source of stress versus sex.
-
   - Test if there is an association between these two variables using a chi-square test.
-
   - What percentage of males report that work is their primary source of stress? What about the females?
-
   - Fit a logistic regression model predicting whether a participant is a male or not based on various variables in the dataset.
-
   - Optional: Create an ROC curve based on your model and get the area under the curve (AUC). Based on the AUC, are you able to predict who the males in the dataset are accurately?
 
 ---

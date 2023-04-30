@@ -27,7 +27,7 @@ In week 2, we will take a look at some ways of creatings various types of graphs
 
 The R script for this tutorial:
 
-- [intro_to_r_week_1.r](https://www.dropbox.com/s/as2ik4wc3ab4wlf/intro_to_r_week_2.r?dl=1)
+- [intro_to_r_week_2.r](https://www.dropbox.com/s/as2ik4wc3ab4wlf/intro_to_r_week_2.r?dl=1)
 
 The dataset for this tutorial:
 

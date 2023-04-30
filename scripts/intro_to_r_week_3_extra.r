@@ -1,6 +1,6 @@
 ############################################################################
 
-# restart the R session (Menu 'Session' - Restart R)
+# restart the R session (Menu 'Session' - 'Restart R')
 
 # read in data
 
@@ -16,6 +16,7 @@ table(dat$smoke)
 # two-way contingency table
 
 table(dat$sex, dat$smoke)
+table(sex = dat$sex, smoke = dat$smoke)
 
 # table with margin totals added
 
@@ -40,11 +41,6 @@ addmargins(prop.table(table(dat$sex, dat$smoke)))
 
 prop.table(table(dat$sex, dat$smoke), margin=1)
 prop.table(table(dat$sex, dat$smoke), margin=2)
-
-# add margin proportions
-
-addmargins(prop.table(table(dat$sex, dat$smoke), margin=1), margin=2)
-addmargins(prop.table(table(dat$sex, dat$smoke), margin=2), margin=1)
 
 ############################################################################
 
@@ -73,13 +69,17 @@ fisher.test(table(dat$sex, dat$smoke))
 res <- glm(smoke ~ sex, data=dat, family=binomial)
 
 # the outcome variable for logistic regression must be coded 0/1 or can be a
-# factor (but then you have to figure out what the reference level is, so you
-# know which of the two events is being predicted)
+# factor variable (but then you have to figure out what the reference level is,
+# so you know which of the two events is being predicted)
 
 factor(dat$smoke)
 
 res <- glm(factor(smoke) ~ sex, data=dat, family=binomial)
 summary(res)
+
+# the *second* level is the event that the model is predicting (so, the model
+# above is one that predicts the probability, or more precisely the log odds,
+# of being a smoker)
 
 # it may be safer to do the coding manually
 

@@ -143,11 +143,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -176,8 +180,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -185,16 +189,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -356,6 +353,9 @@ div.tocify {
 <li>
   <a href="w5.html">Week 5</a>
 </li>
+<li>
+  <a href="w5e.html">Week 5 (extra)</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -398,30 +398,30 @@ div.tocify {
 <p>In this exercise, we will continue to work with the dataset in <code>data_survey_edit.rdata</code>.</p>
 <p>Part A:</p>
 <ul>
-<li><p>Create a boxplot for the total score on the Perceived Stress Scale (PSS) by the primary sources of stress.</p></li>
-<li><p>Which primary sources of stress appear to lead to comparatively higher levels of perceived stress?</p></li>
-<li><p>Test whether the average total score on the PSS differs between the primary sources of stress using an ANOVA.</p></li>
-<li><p>Run a regression model to examine the same thing.</p></li>
-<li><p>Which primary source of stress level is the ‘reference level’ in the regression model?</p></li>
-<li><p>Test if the impact of the stress sources on the stress level is dependent on sex (i.e., whether there is an interaction) in a two-way ANOVA.</p></li>
+<li>Create a boxplot for the total score on the Perceived Stress Scale (PSS) by the primary sources of stress.</li>
+<li>Which primary sources of stress appear to lead to comparatively higher levels of perceived stress?</li>
+<li>Test whether the average total score on the PSS differs between the primary sources of stress using an ANOVA.</li>
+<li>Run a regression model to examine the same thing.</li>
+<li>Which primary source of stress level is the ‘reference level’ in the regression model?</li>
+<li>Test if the impact of the stress sources on the stress level is dependent on sex (i.e., whether there is an interaction) in a two-way ANOVA.</li>
 </ul>
 <p>Part B:</p>
 <ul>
-<li><p>Test the correlation between the total score on the Perceived Stress Scale (PSS) and the total score on the Pearlin Mastery Scale (‘mastery’).</p></li>
-<li><p>Run a regression model with PSS as the outcome and ‘mastery’ as predictor.</p></li>
-<li><p>Are the conclusions from these two methods of examining the association between these two variables consistent with each other?</p></li>
-<li><p>Adjust the association tested in the regression model for age, sex, and the level of education of the participants.</p></li>
-<li><p>Is the association between the PSS and mastery still significant?</p></li>
-<li><p>Create a scatterplot of ‘mastery’ (x-axis) versus ‘pss’ (y-axis).</p></li>
-<li><p>Based on the previous regression model, add a regression line to the plot showing the association between ‘pss’ and ‘mastery’ for a 40-year old female with an ‘undergraduate degree’.</p></li>
+<li>Test the correlation between the total score on the Perceived Stress Scale (PSS) and the total score on the Pearlin Mastery Scale (‘mastery’).</li>
+<li>Run a regression model with PSS as the outcome and ‘mastery’ as predictor.</li>
+<li>Are the conclusions from these two methods of examining the association between these two variables consistent with each other?</li>
+<li>Adjust the association tested in the regression model for age, sex, and the level of education of the participants.</li>
+<li>Is the association between the PSS and mastery still significant?</li>
+<li>Create a scatterplot of ‘mastery’ (x-axis) versus ‘pss’ (y-axis).</li>
+<li>Based on the previous regression model, add a regression line to the plot showing the association between ‘pss’ and ‘mastery’ for a 40-year old female with an ‘undergraduate degree’.</li>
 </ul>
 <p>Part C:</p>
 <ul>
-<li><p>Create a contingency table of primary source of stress versus sex.</p></li>
-<li><p>Test if there is an association between these two variables using a chi-square test.</p></li>
-<li><p>What percentage of males report that work is their primary source of stress? What about the females?</p></li>
-<li><p>Fit a logistic regression model predicting whether a participant is a male or not based on various variables in the dataset.</p></li>
-<li><p>Optional: Create an ROC curve based on your model and get the area under the curve (AUC). Based on the AUC, are you able to predict who the males in the dataset are accurately?</p></li>
+<li>Create a contingency table of primary source of stress versus sex.</li>
+<li>Test if there is an association between these two variables using a chi-square test.</li>
+<li>What percentage of males report that work is their primary source of stress? What about the females?</li>
+<li>Fit a logistic regression model predicting whether a participant is a male or not based on various variables in the dataset.</li>
+<li>Optional: Create an ROC curve based on your model and get the area under the curve (AUC). Based on the AUC, are you able to predict who the males in the dataset are accurately?</li>
 </ul>
 <hr />
 </div>

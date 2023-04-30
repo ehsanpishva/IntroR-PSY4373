@@ -143,11 +143,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -176,8 +180,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -185,16 +189,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -356,6 +353,9 @@ div.tocify {
 <li>
   <a href="w5.html">Week 5</a>
 </li>
+<li>
+  <a href="w5e.html">Week 5 (extra)</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -379,7 +379,7 @@ div.tocify {
 <h3>Self-Study</h3>
 <p>There is no self-study part for this week.</p>
 <hr />
-<p>There are two different exercises that you can choose from for this week. The first one is more aimed at students from FN and DN, the second for those from the PP track (but you are free to choose whatever exercise you prefer, regardless of your track).</p>
+<p>There are two different exercises that you can choose from for this week. The first one is aimed at students from the FN and DN tracks, the second for those from the PP/CP track (but you are free to choose whatever exercise you prefer, regardless of your track).</p>
 </div>
 <div id="excercise-4a" class="section level3">
 <h3>Excercise 4a</h3>
@@ -388,8 +388,7 @@ div.tocify {
 <li><a href="https://www.dropbox.com/s/e698ayslcpgsp2v/mirnadata.rdata?dl=1">mirnadata.rdata</a></li>
 </ul>
 <ol style="list-style-type: decimal">
-<li>The code for a differential miRNA expression analysis of Alzheimers disease in post-mortem brains is pasted below (remember to set the working directory before trying to load the dataset).</li>
-</ol>
+<li><p>The code for a differential miRNA expression analysis of Alzheimers disease in post-mortem brains is pasted below (remember to set the working directory before trying to load the dataset).</p>
 <pre class="r"><code>load(&quot;mirnadata.rdata&quot;)
 
 res &lt;- matrix(data=NA, nrow=490, ncol=4)
@@ -401,29 +400,22 @@ for (i in 2:491) {
 
 colnames(res) &lt;- c(&quot;Estimate&quot;,&quot;SE&quot;,&quot;t&quot;,&quot;p-value&quot;)
 rownames(res) &lt;- colnames(dat)[2:491]
-res &lt;- res[order(res[,4]),]</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Install the package <a href="https://www.bioconductor.org/packages/release/bioc/html/multiMiR.html">multiMiR</a> with:</li>
-</ol>
+res &lt;- res[order(res[,4]),]</code></pre></li>
+<li><p>Install the package <a href="https://www.bioconductor.org/packages/release/bioc/html/multiMiR.html">multiMiR</a> with:</p>
 <pre class="r"><code>install.packages(&quot;BiocManager&quot;)
 BiocManager::install(&quot;multiMiR&quot;)</code></pre>
 <p>Then load the package with:</p>
-<pre class="r"><code>library(multiMiR)</code></pre>
-<ol start="3" style="list-style-type: decimal">
+<pre class="r"><code>library(multiMiR)</code></pre></li>
 <li><p>Use the <code>get_multimir</code> function from the package and extract the validated mRNA targets for the top (i.e., most significant) two deferentially expressed miRNAs in association with AD pathology (read <code>help(get_multimir)</code> carefully to check which argument of the function you have to use to specify the two miRNAs and also carefully check how the names of the two miRNAs need to be specified so that they can be looked up). Put the results that the function returns into an object called <code>top2</code>.</p></li>
-<li><p>Generate a vector from the column called <code>target_entrez</code> in the table of results returned by the <code>get_multimir</code> function. You can do this with:</p></li>
-</ol>
-<pre class="r"><code>targets &lt;- as.data.frame(top2@data)$target_entrez</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Install packages <a href="https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html">clusterProfiler</a> and <a href="https://bioconductor.org/packages/release/data/annotation/html/org.Hs.eg.db.html">org.Hs.eg.db</a> with:</li>
-</ol>
+<li><p>Generate a vector from the column called <code>target_entrez</code> in the table of results returned by the <code>get_multimir</code> function. You can do this with:</p>
+<pre class="r"><code>targets &lt;- as.data.frame(top2@data)$target_entrez</code></pre></li>
+<li><p>Install packages <a href="https://bioconductor.org/packages/clusterProfiler/">clusterProfiler</a> and <a href="https://bioconductor.org/packages/org.Hs.eg.db/">org.Hs.eg.db</a> with:</p>
 <pre class="r"><code>BiocManager::install(&quot;clusterProfiler&quot;)
 BiocManager::install(&quot;org.Hs.eg.db&quot;)</code></pre>
 <p>Then load the <code>clusterProfiler</code> package with:</p>
-<pre class="r"><code>library(clusterProfiler)</code></pre>
-<ol start="6" style="list-style-type: decimal">
+<pre class="r"><code>library(clusterProfiler)</code></pre></li>
 <li><p>Use the <code>enrichKEGG</code> function from the <code>clusterProfiler</code> package and use the <code>targets</code> vector you generated above as input. Put the results into an object called <code>kegg</code>. With <code>data.frame(kegg@result)</code>, you can extract the table of results from the KEGG pathway analysis.</p></li>
-<li><p>Write the table of the KEGG pathway analysis to a file (use the <code>write.table</code> function; see the week 1 extra part) and upload that together with your script.</p></li>
+<li><p>Write the table of the KEGG pathway analysis to a file (use the <code>write.table</code> function; see the week 1 extra part).</p></li>
 </ol>
 <hr />
 </div>
@@ -458,20 +450,16 @@ BiocManager::install(&quot;org.Hs.eg.db&quot;)</code></pre>
   21) Loss of Libido</code></pre>
 <ol style="list-style-type: decimal">
 <li><p>Read in the dataset using the <code>read.table</code> function.</p></li>
-<li><p>Create a vector with 21 missing values with:</p></li>
-</ol>
-<pre class="r"><code>cors &lt;- rep(NA, 21)</code></pre>
-<ol start="3" style="list-style-type: decimal">
+<li><p>Create a vector with 21 missing values with:</p>
+<pre class="r"><code>cors &lt;- rep(NA, 21)</code></pre></li>
 <li><p>For each of the 21 items, correlate the pre- and post-assessment scores. Use a loop to do this. Save the results into the <code>cors</code> vector.</p></li>
 <li><p>Which item correlates the weakest? Which item correlates the strongest? What is the average correlation?</p></li>
-<li><p>Let’s see if the 21 items can be clustered into different groups based on their pre to post correlations. Install and load the <a href="https://cran.r-project.org/package=mclust">mclust</a> package with:</p></li>
-</ol>
+<li><p>Let’s see if the 21 items can be clustered into different groups based on their pre to post correlations. Install and load the <a href="https://cran.r-project.org/package=mclust">mclust</a> package with:</p>
 <pre class="r"><code>install.packages(&quot;mclust&quot;)
-library(mclust)</code></pre>
-<ol start="6" style="list-style-type: decimal">
+library(mclust)</code></pre></li>
 <li><p>Use the <code>Mclust</code> function from the package to run a cluster analysis (using a <a href="https://en.wikipedia.org/wiki/Mixture_model">mixture model</a>) with the correlations as input. Specify that you want 2 clusters. For the model type (<code>modelNames</code>), specify that you want type <code>"E"</code> (which asumes that the variance of the correlations within clusters is the same for the 2 clusters).</p></li>
 <li><p>Which items cluster together into the first and second groups?</p></li>
-<li><p>Repeat step 6. but now specify that you want between 1 and 6 clusters. The <code>Mclust</code> function will determine the optimal number of clusters according to the BIC (here, a higher value of the BIC indicates a better tradeoff between the fit of the mixture model and its complexity). What number of clusters has the highest BIC? Create a plot of the BIC values (read <code>help(plot.Mclust)</code> to see how this can be done).</p></li>
+<li><p>Repeat step 6, but now specify that you want between 1 and 6 clusters. The <code>Mclust</code> function will determine the optimal number of clusters according to the BIC (here, a higher value of the BIC indicates a better tradeoff between the fit of the mixture model and its complexity). What number of clusters has the highest BIC? Create a plot of the BIC values (read <code>help(plot.Mclust)</code> to see how this can be done).</p></li>
 </ol>
 <hr />
 </div>

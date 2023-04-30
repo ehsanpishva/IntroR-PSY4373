@@ -19,7 +19,6 @@ In week 4, we will discuss how to work with R packages (we have already done so,
 - masking
 - for-loops
 - if-else statements
-- while statements
 - generating random numbers
 
 The R script for this tutorial:

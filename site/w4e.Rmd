@@ -12,7 +12,7 @@ There is no self-study part for this week.
 
 ---
 
-There are two different exercises that you can choose from for this week. The first one is more aimed at students from FN and DN, the second for those from the PP track (but you are free to choose whatever exercise you prefer, regardless of your track).
+There are two different exercises that you can choose from for this week. The first one is aimed at students from the FN and DN tracks, the second for those from the PP/CP track (but you are free to choose whatever exercise you prefer, regardless of your track).
 
 ### Excercise 4a
 
@@ -22,58 +22,58 @@ For this exercise, you will need this dataset:
 
 1. The code for a differential miRNA expression analysis of Alzheimers disease in post-mortem brains is pasted below (remember to set the working directory before trying to load the dataset).
 
-```{r c1, eval = FALSE}
-load("mirnadata.rdata")
+   ```{r c1, eval = FALSE}
+   load("mirnadata.rdata")
 
-res <- matrix(data=NA, nrow=490, ncol=4)
+   res <- matrix(data=NA, nrow=490, ncol=4)
 
-for (i in 2:491) {
-   fit <- lm(dat[,i] ~ Braak, data=dat)
-   res[i-1,] <- coef(summary(fit))[2,]
-}
+   for (i in 2:491) {
+      fit <- lm(dat[,i] ~ Braak, data=dat)
+      res[i-1,] <- coef(summary(fit))[2,]
+   }
 
-colnames(res) <- c("Estimate","SE","t","p-value")
-rownames(res) <- colnames(dat)[2:491]
-res <- res[order(res[,4]),]
-```
+   colnames(res) <- c("Estimate","SE","t","p-value")
+   rownames(res) <- colnames(dat)[2:491]
+   res <- res[order(res[,4]),]
+   ```
 
 2. Install the package [multiMiR](https://www.bioconductor.org/packages/release/bioc/html/multiMiR.html) with:
 
-```{r c2, eval = FALSE}
-install.packages("BiocManager")
-BiocManager::install("multiMiR")
-```
+   ```{r c2, eval = FALSE}
+   install.packages("BiocManager")
+   BiocManager::install("multiMiR")
+   ```
 
-Then load the package with:
+   Then load the package with:
 
-```{r c3, eval = FALSE}
-library(multiMiR)
-```
+   ```{r c3, eval = FALSE}
+   library(multiMiR)
+   ```
 
 3. Use the `get_multimir` function from the package and extract the validated mRNA targets for the top (i.e., most significant) two deferentially expressed miRNAs in association with AD pathology (read `help(get_multimir)` carefully to check which argument of the function you have to use to specify the two miRNAs and also carefully check how the names of the two miRNAs need to be specified so that they can be looked up). Put the results that the function returns into an object called `top2`.
 
 4. Generate a vector from the column called `target_entrez` in the table of results returned by the `get_multimir` function. You can do this with:
 
-```{r c4, eval = FALSE}
-targets <- as.data.frame(top2@data)$target_entrez
-```
+   ```{r c4, eval = FALSE}
+   targets <- as.data.frame(top2@data)$target_entrez
+   ```
 
-5. Install packages [clusterProfiler](https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html) and [org.Hs.eg.db](https://bioconductor.org/packages/release/data/annotation/html/org.Hs.eg.db.html) with:
+5. Install packages [clusterProfiler](https://bioconductor.org/packages/clusterProfiler/) and [org.Hs.eg.db](https://bioconductor.org/packages/org.Hs.eg.db/) with:
 
-```{r c5, eval = FALSE}
-BiocManager::install("clusterProfiler")
-BiocManager::install("org.Hs.eg.db")
-```
+   ```{r c5, eval = FALSE}
+   BiocManager::install("clusterProfiler")
+   BiocManager::install("org.Hs.eg.db")
+   ```
 
-Then load the `clusterProfiler` package with:
+   Then load the `clusterProfiler` package with:
 
-```{r c6, eval = FALSE}
-library(clusterProfiler)
-```
+   ```{r c6, eval = FALSE}
+   library(clusterProfiler)
+   ```
 
 6. Use the `enrichKEGG` function from the `clusterProfiler` package and use the `targets` vector you generated above as input. Put the results into an object called `kegg`. With `data.frame(kegg@result)`, you can extract the table of results from the KEGG pathway analysis.
 
-7. Write the table of the KEGG pathway analysis to a file (use the `write.table` function; see the week 1 extra part) and upload that together with your script.
+7. Write the table of the KEGG pathway analysis to a file (use the `write.table` function; see the week 1 extra part).
 
 ---
 
@@ -113,9 +113,9 @@ The items on the BDI measure the following indicators of depression:
 
 2. Create a vector with 21 missing values with:
 
-```{r c7, eval = FALSE}
-cors <- rep(NA, 21)
-```
+   ```{r c7, eval = FALSE}
+   cors <- rep(NA, 21)
+   ```
 
 3. For each of the 21 items, correlate the pre- and post-assessment scores. Use a loop to do this. Save the results into the `cors` vector.
 
@@ -123,15 +123,15 @@ cors <- rep(NA, 21)
 
 5. Let's see if the 21 items can be clustered into different groups based on their pre to post correlations. Install and load the [mclust](https://cran.r-project.org/package=mclust) package with:
 
-```{r c8, eval = FALSE}
-install.packages("mclust")
-library(mclust)
-```
+   ```{r c8, eval = FALSE}
+   install.packages("mclust")
+   library(mclust)
+   ```
 
 6. Use the `Mclust` function from the package to run a cluster analysis (using a [mixture model](https://en.wikipedia.org/wiki/Mixture_model)) with the correlations as input. Specify that you want 2 clusters. For the model type (`modelNames`), specify that you want type `"E"` (which asumes that the variance of the correlations within clusters is the same for the 2 clusters).
 
 7. Which items cluster together into the first and second groups?
 
-8. Repeat step 6. but now specify that you want between 1 and 6 clusters. The `Mclust` function will determine the optimal number of clusters according to the BIC (here, a higher value of the BIC indicates a better tradeoff between the fit of the mixture model and its complexity). What number of clusters has the highest BIC? Create a plot of the BIC values (read `help(plot.Mclust)` to see how this can be done).
+8. Repeat step 6, but now specify that you want between 1 and 6 clusters. The `Mclust` function will determine the optimal number of clusters according to the BIC (here, a higher value of the BIC indicates a better tradeoff between the fit of the mixture model and its complexity). What number of clusters has the highest BIC? Create a plot of the BIC values (read `help(plot.Mclust)` to see how this can be done).
 
 ---
