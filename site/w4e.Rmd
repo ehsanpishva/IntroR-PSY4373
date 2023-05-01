@@ -18,7 +18,7 @@ There are two different exercises that you can choose from for this week. The fi
 
 For this exercise, you will need this dataset:
 
-- [mirnadata.rdata](https://www.dropbox.com/s/e698ayslcpgsp2v/mirnadata.rdata?dl=1)
+- `mirnadata.rdata`
 
 1. The code for a differential miRNA expression analysis of Alzheimers disease in post-mortem brains is pasted below (remember to set the working directory before trying to load the dataset).
 
@@ -81,7 +81,7 @@ For this exercise, you will need this dataset:
 
 For this exercise, you will need this dataset:
 
-- [data_bdi.dat](https://www.dropbox.com/s/bi3s4t143n4oem3/data_bdi.dat?dl=1)
+- `data_bdi.dat`
 
 The dataset includes the responses of 276 patients with obsessive-compulsive disorder (OCD) to the 21 items on the [Beck Depression Inventory](https://en.wikipedia.org/wiki/Beck_Depression_Inventory). The patients were assessed twice, with a one-year delay between the two assessments.
 

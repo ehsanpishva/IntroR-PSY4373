@@ -10,9 +10,8 @@ output: html_document
 
 For this week's self-study part, you will need these files:
 
-- [data_survey_edit.rdata](https://www.dropbox.com/s/ti8z282h15dyutx/data_survey_edit.rdata?dl=1) (the dataset after the data preparation)
-- [data_survey.pdf](https://www.dropbox.com/s/kbfisevspr0sk4m/data_survey.pdf?dl=1) (the corresponding code book)
-- [intro_to_r_week_2_extra.r](https://www.dropbox.com/s/wfx0lgmhz0ofsya/intro_to_r_week_2_extra.r?dl=1) (the R script)
+- `data_survey_edit.rdata` (the dataset after the data preparation)
+- `intro_to_r_week_2_extra.r` (the R script)
 
 This self-study part covers the following topics:
 
@@ -29,7 +28,7 @@ This self-study part covers the following topics:
 
 In this exercise, we will continue to work with the dataset in `data_survey_edit.rdata`.
 
-Part A:
+**Part A:**
 
   - Create a boxplot showing negative affect by marital status.
   - But this doesn't look that great, so let's do some modifications:
@@ -41,7 +40,7 @@ Part A:
     5) Use a different color for each marital state.
     6) Superimpose the actual data with some jitter on top of the boxplot with the `stripchart()` function.
 
-Part B:
+**Part B:**
 
   - Create a scatterplot showing the association between the Rosenberg Self-Esteem Scale on the x-axis and negative affect on the y-axis.
   - Use a filled circle as the plotting symbol and jitter the points slightly.

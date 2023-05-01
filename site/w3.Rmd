@@ -21,10 +21,10 @@ Week 3 is all about various types of statistical tests / models. We will examine
 
 The R script for this tutorial:
 
-- [intro_to_r_week_3.r](https://www.dropbox.com/s/noyabp7crmz1rhh/intro_to_r_week_3.r?dl=1)
+- `intro_to_r_week_3.r`
 
 The dataset for this tutorial:
 
-- [data_survey_edit.rdata](https://www.dropbox.com/s/ti8z282h15dyutx/data_survey_edit.rdata?dl=1)
+- `data_survey_edit.rdata` (the dataset after the data preparation)
 
 ---

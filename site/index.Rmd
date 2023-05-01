@@ -37,6 +37,10 @@ In this course, we will cover:
 
 2. Please also **install RStudio**, an integrated development environment (IDE) for R. It provides some useful features that make it a bit easier to work with R (to be discussed in more detail during the course). You can download RStudio for free from [here](https://posit.co/download/rstudio-desktop/). Download the appropriate file (Windows / macOS / etc) and install it in the usual manner (note that you must have R installed first for RStudio to work).
 
+### Materials
+
+The materials for this course can be downloaded as a zip file [here](https://github.com/ehsanpishva/IntroR-PSY4373/blob/main/scripts/intro_to_r_materials.zip). Make sure to properly extract the files from the zip file and place them in a directory/folder somewhere on your computer.
+
 ### Links
 
 - [UM Page for PSY4373](https://curriculum.maastrichtuniversity.nl/meta/437595/introduction-r)

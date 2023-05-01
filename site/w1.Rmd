@@ -26,6 +26,6 @@ In week 1, we will dive into R together and cover the following topics in a hand
 
 The R script for this tutorial:
 
-- [intro_to_r_week_1.r](https://www.dropbox.com/s/396zab45v3x6f78/intro_to_r_week_1.r?dl=1)
+- `intro_to_r_week_1.r`
 
 ---

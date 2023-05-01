@@ -10,9 +10,9 @@ output: html_document
 
 For this week's self-study part, you will need these files:
 
-- [data_survey.dat](https://www.dropbox.com/s/trpl9x5sye3gl53/data_survey.dat?dl=1) (the dataset)
-- [data_survey.pdf](https://www.dropbox.com/s/kbfisevspr0sk4m/data_survey.pdf?dl=1) (the corresponding code book)
-- [intro_to_r_week_1_extra.r](https://www.dropbox.com/s/p6rxk62be4y7dem/intro_to_r_week_1_extra.r?dl=1) (the R script)
+- `data_survey.dat` (the dataset)
+- `data_survey.pdf` (the corresponding code book)
+- `intro_to_r_week_1_extra.r` (the R script)
 
 This self-study part covers the following topics:
 
@@ -25,13 +25,15 @@ This self-study part covers the following topics:
 - reverse coding items
 - data export
 
+**Note:** At the end of the R script, you save the edited version of the dataset to a file called `data_survey_edit.rdata`. We will need this version of the dataset in future sessions, so don't forget this step!
+
 ---
 
 ### Exercise 1
 
 For the exercise, you will need this dataset:
 
-- [inflammation.csv](https://www.dropbox.com/s/ej9ncf8655i8aqn/inflammation.csv?dl=1)
+- `inflammation.csv`
 
 Create a new script file for this exercise and save it to the same directory/folder where you have saved the dataset to. Next, set the working directory to this directory/folder. Then you can import the dataset with:
 

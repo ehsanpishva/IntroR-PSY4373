@@ -10,9 +10,8 @@ output: html_document
 
 For this week's self-study part, you will need these files:
 
-- [data_survey_edit.rdata](https://www.dropbox.com/s/ti8z282h15dyutx/data_survey_edit.rdata?dl=1) (the dataset after the data preparation)
-- [data_survey.pdf](https://www.dropbox.com/s/kbfisevspr0sk4m/data_survey.pdf?dl=1) (the corresponding code book)
-- [intro_to_r_week_3_extra.r](https://www.dropbox.com/s/cp67zexkqgxw5y2/intro_to_r_week_3_extra.r?dl=1) (the R script)
+- `data_survey_edit.rdata` (the dataset after the data preparation)
+- `intro_to_r_week_3_extra.r` (the R script)
 
 This self-study part covers the following topics:
 
@@ -28,7 +27,7 @@ This self-study part covers the following topics:
 
 In this exercise, we will continue to work with the dataset in `data_survey_edit.rdata`.
 
-Part A:
+**Part A:**
 
   - Create a boxplot for the total score on the Perceived Stress Scale (PSS) by the primary sources of stress.
   - Which primary sources of stress appear to lead to comparatively higher levels of perceived stress?
@@ -37,7 +36,7 @@ Part A:
   - Which primary source of stress level is the 'reference level' in the regression model?
   - Test if the impact of the stress sources on the stress level is dependent on sex (i.e., whether there is an interaction) in a two-way ANOVA.
 
-Part B:
+**Part B:**
 
   - Test the correlation between the total score on the Perceived Stress Scale (PSS) and the total score on the Pearlin Mastery Scale ('mastery').
   - Run a regression model with PSS as the outcome and 'mastery' as predictor.
@@ -47,7 +46,7 @@ Part B:
   - Create a scatterplot of 'mastery' (x-axis) versus 'pss' (y-axis).
   - Based on the previous regression model, add a regression line to the plot showing the association between 'pss' and 'mastery' for a 40-year old female with an 'undergraduate degree'.
 
-Part C:
+**Part C:**
 
   - Create a contingency table of primary source of stress versus sex.
   - Test if there is an association between these two variables using a chi-square test.
