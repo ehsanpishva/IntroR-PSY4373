@@ -39,7 +39,7 @@ In this course, we will cover:
 
 ### Materials
 
-The materials for this course can be downloaded as a zip file [here](https://github.com/ehsanpishva/IntroR-PSY4373/blob/main/scripts/intro_to_r_materials.zip). Make sure to properly extract the files from the zip file and place them in a directory/folder somewhere on your computer.
+The materials for this course can be downloaded as a zip file [here](https://github.com/ehsanpishva/IntroR-PSY4373/raw/main/scripts/intro_to_r_materials.zip). Make sure to properly extract the files from the zip file and place them in a directory/folder somewhere on your computer.
 
 ### Links
 
